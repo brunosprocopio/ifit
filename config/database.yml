@@ -1,23 +1,20 @@
 default: &default
-  adapter: mysql
+  adapter: postgresql
   pool: 5
   timeout: 5000
 
 development:
-  adapter: mysql
-  encoding: utf8
-  reconnect: false
-  database: development-ifit
-  pool: 5
-  username: root
-  password: 1234
+  <<: *default
   host: localhost
+  username: postgres
+  password: pgadmin
+  database: development-ift
 
 test: &test
   <<: *default
   host: localhost
-  username: root
-  password: 1234
+  username: postgres
+  password: pgadmin
   database: test-ifit
 
 production:
