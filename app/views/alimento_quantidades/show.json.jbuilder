@@ -1,0 +1,1 @@
+json.partial! "alimento_quantidades/alimento_quantidade", alimento_quantidade: @alimento_quantidade

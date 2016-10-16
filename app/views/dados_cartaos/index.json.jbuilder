@@ -1,0 +1,1 @@
+json.array! @dados_cartaos, partial: 'dados_cartaos/dados_cartao', as: :dados_cartao

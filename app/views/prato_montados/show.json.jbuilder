@@ -1,0 +1,1 @@
+json.partial! "prato_montados/prato_montado", prato_montado: @prato_montado

@@ -1,0 +1,1 @@
+json.partial! "pagamento_aceitos/pagamento_aceito", pagamento_aceito: @pagamento_aceito

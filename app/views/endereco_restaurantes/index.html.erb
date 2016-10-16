@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Endereco Restaurantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cep</th>
+      <th>Pais</th>
+      <th>Estado</th>
+      <th>Cidade</th>
+      <th>Rua</th>
+      <th>Numero</th>
+      <th>Complemento</th>
+      <th>Restaurante</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @endereco_restaurantes.each do |endereco_restaurante| %>
+      <tr>
+        <td><%= endereco_restaurante.cep %></td>
+        <td><%= endereco_restaurante.pais %></td>
+        <td><%= endereco_restaurante.estado %></td>
+        <td><%= endereco_restaurante.cidade %></td>
+        <td><%= endereco_restaurante.rua %></td>
+        <td><%= endereco_restaurante.numero %></td>
+        <td><%= endereco_restaurante.complemento %></td>
+        <td><%= endereco_restaurante.restaurante %></td>
+        <td><%= link_to 'Show', endereco_restaurante %></td>
+        <td><%= link_to 'Edit', edit_endereco_restaurante_path(endereco_restaurante) %></td>
+        <td><%= link_to 'Destroy', endereco_restaurante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Endereco restaurante', new_endereco_restaurante_path %>

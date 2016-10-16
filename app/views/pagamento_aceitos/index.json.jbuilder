@@ -1,0 +1,1 @@
+json.array! @pagamento_aceitos, partial: 'pagamento_aceitos/pagamento_aceito', as: :pagamento_aceito

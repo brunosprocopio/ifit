@@ -1,0 +1,2 @@
+module RestaurantesProximosHelper
+end

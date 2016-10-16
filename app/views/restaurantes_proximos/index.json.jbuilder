@@ -1,0 +1,1 @@
+json.array! @restaurantes_proximos, partial: 'restaurantes_proximos/restaurantes_proximo', as: :restaurantes_proximo

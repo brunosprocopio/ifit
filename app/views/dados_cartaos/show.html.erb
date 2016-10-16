@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @dados_cartao.nome %>
+</p>
+
+<p>
+  <strong>Vencimento:</strong>
+  <%= @dados_cartao.vencimento %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @dados_cartao.numero %>
+</p>
+
+<p>
+  <strong>Cod seguranca integer:</strong>
+  <%= @dados_cartao.cod_seguranca_integer %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @dados_cartao.tipo %>
+</p>
+
+<%= link_to 'Edit', edit_dados_cartao_path(@dados_cartao) %> |
+<%= link_to 'Back', dados_cartaos_path %>

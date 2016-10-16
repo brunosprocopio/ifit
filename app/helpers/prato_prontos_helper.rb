@@ -1,0 +1,2 @@
+module PratoProntosHelper
+end

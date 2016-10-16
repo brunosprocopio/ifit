@@ -1,0 +1,1 @@
+json.array! @endereco_sessaos, partial: 'endereco_sessaos/endereco_sessao', as: :endereco_sessao

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @prato_pronto.preco %>
+</p>
+
+<p>
+  <strong>Prato:</strong>
+  <%= @prato_pronto.prato %>
+</p>
+
+<%= link_to 'Edit', edit_prato_pronto_path(@prato_pronto) %> |
+<%= link_to 'Back', prato_prontos_path %>

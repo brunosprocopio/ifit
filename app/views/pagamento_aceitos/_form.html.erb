@@ -1,0 +1,101 @@
+<%= form_for(@pagamento_aceito) do |f| %>
+  <% if @pagamento_aceito.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pagamento_aceito.errors.count, "error") %> prohibited this pagamento_aceito from being saved:</h2>
+
+      <ul>
+      <% @pagamento_aceito.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cheque %><br>
+    <%= f.check_box :cheque %>
+  </div>
+  <div class="field">
+    <%= f.label :credito-amer-expre %><br>
+    <%= f.check_box :credito-amer-expre %>
+  </div>
+  <div class="field">
+    <%= f.label :credito-diners %><br>
+    <%= f.check_box :credito-diners %>
+  </div>
+  <div class="field">
+    <%= f.label :credito-goodcard %><br>
+    <%= f.check_box :credito-goodcard %>
+  </div>
+  <div class="field">
+    <%= f.label :credito-hipercard %><br>
+    <%= f.check_box :credito-hipercard %>
+  </div>
+  <div class="field">
+    <%= f.label :credito-mastercard %><br>
+    <%= f.check_box :credito-mastercard %>
+  </div>
+  <div class="field">
+    <%= f.label :credito-verdecard %><br>
+    <%= f.check_box :credito-verdecard %>
+  </div>
+  <div class="field">
+    <%= f.label :credito-visa %><br>
+    <%= f.check_box :credito-visa %>
+  </div>
+  <div class="field">
+    <%= f.label :credito-banricompras %><br>
+    <%= f.check_box :credito-banricompras %>
+  </div>
+  <div class="field">
+    <%= f.label :dinheiro %><br>
+    <%= f.check_box :dinheiro %>
+  </div>
+  <div class="field">
+    <%= f.label :debito-banricompras %><br>
+    <%= f.check_box :debito-banricompras %>
+  </div>
+  <div class="field">
+    <%= f.label :debito-bo %><br>
+    <%= f.check_box :debito-bo %>
+  </div>
+  <div class="field">
+    <%= f.label :debito-mastercard %><br>
+    <%= f.check_box :debito-mastercard %>
+  </div>
+  <div class="field">
+    <%= f.label :debito-visa %><br>
+    <%= f.check_box :debito-visa %>
+  </div>
+  <div class="field">
+    <%= f.label :vale-alelo %><br>
+    <%= f.check_box :vale-alelo %>
+  </div>
+  <div class="field">
+    <%= f.label :vale-sodexo %><br>
+    <%= f.check_box :vale-sodexo %>
+  </div>
+  <div class="field">
+    <%= f.label :vale-ticket %><br>
+    <%= f.check_box :vale-ticket %>
+  </div>
+  <div class="field">
+    <%= f.label :vale-valecard %><br>
+    <%= f.check_box :vale-valecard %>
+  </div>
+  <div class="field">
+    <%= f.label :vale-verocard %><br>
+    <%= f.check_box :vale-verocard %>
+  </div>
+  <div class="field">
+    <%= f.label :vale-srsmart %><br>
+    <%= f.check_box :vale-srsmart %>
+  </div>
+  <div class="field">
+    <%= f.label :references %><br>
+    <%= f.text_field :references %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

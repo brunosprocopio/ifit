@@ -1,0 +1,2 @@
+json.extract! pagamento_aceito, :id, :cheque, :credito-amer-expre, :credito-diners, :credito-goodcard, :credito-hipercard, :credito-mastercard, :credito-verdecard, :credito-visa, :credito-banricompras, :dinheiro, :debito-banricompras, :debito-bo, :debito-mastercard, :debito-visa, :vale-alelo, :vale-sodexo, :vale-ticket, :vale-valecard, :vale-verocard, :vale-srsmart, :references, :created_at, :updated_at
+json.url pagamento_aceito_url(pagamento_aceito, format: :json)

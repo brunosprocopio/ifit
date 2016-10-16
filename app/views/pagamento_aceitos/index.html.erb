@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pagamento Aceitos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cheque</th>
+      <th>Credito-amer-expre</th>
+      <th>Credito-diners</th>
+      <th>Credito-goodcard</th>
+      <th>Credito-hipercard</th>
+      <th>Credito-mastercard</th>
+      <th>Credito-verdecard</th>
+      <th>Credito-visa</th>
+      <th>Credito-banricompras</th>
+      <th>Dinheiro</th>
+      <th>Debito-banricompras</th>
+      <th>Debito-bo</th>
+      <th>Debito-mastercard</th>
+      <th>Debito-visa</th>
+      <th>Vale-alelo</th>
+      <th>Vale-sodexo</th>
+      <th>Vale-ticket</th>
+      <th>Vale-valecard</th>
+      <th>Vale-verocard</th>
+      <th>Vale-srsmart</th>
+      <th>References</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pagamento_aceitos.each do |pagamento_aceito| %>
+      <tr>
+        <td><%= pagamento_aceito.cheque %></td>
+        <td><%= pagamento_aceito.credito-amer-expre %></td>
+        <td><%= pagamento_aceito.credito-diners %></td>
+        <td><%= pagamento_aceito.credito-goodcard %></td>
+        <td><%= pagamento_aceito.credito-hipercard %></td>
+        <td><%= pagamento_aceito.credito-mastercard %></td>
+        <td><%= pagamento_aceito.credito-verdecard %></td>
+        <td><%= pagamento_aceito.credito-visa %></td>
+        <td><%= pagamento_aceito.credito-banricompras %></td>
+        <td><%= pagamento_aceito.dinheiro %></td>
+        <td><%= pagamento_aceito.debito-banricompras %></td>
+        <td><%= pagamento_aceito.debito-bo %></td>
+        <td><%= pagamento_aceito.debito-mastercard %></td>
+        <td><%= pagamento_aceito.debito-visa %></td>
+        <td><%= pagamento_aceito.vale-alelo %></td>
+        <td><%= pagamento_aceito.vale-sodexo %></td>
+        <td><%= pagamento_aceito.vale-ticket %></td>
+        <td><%= pagamento_aceito.vale-valecard %></td>
+        <td><%= pagamento_aceito.vale-verocard %></td>
+        <td><%= pagamento_aceito.vale-srsmart %></td>
+        <td><%= pagamento_aceito.references %></td>
+        <td><%= link_to 'Show', pagamento_aceito %></td>
+        <td><%= link_to 'Edit', edit_pagamento_aceito_path(pagamento_aceito) %></td>
+        <td><%= link_to 'Destroy', pagamento_aceito, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pagamento aceito', new_pagamento_aceito_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@avaliacao) do |f| %>
+  <% if @avaliacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@avaliacao.errors.count, "error") %> prohibited this avaliacao from being saved:</h2>
+
+      <ul>
+      <% @avaliacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nota_alimento %><br>
+    <%= f.number_field :nota_alimento %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br>
+    <%= f.text_field :comentario %>
+  </div>
+  <div class="field">
+    <%= f.label :nota_custo %><br>
+    <%= f.number_field :nota_custo %>
+  </div>
+  <div class="field">
+    <%= f.label :nota_geral %><br>
+    <%= f.number_field :nota_geral %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+json.extract! endereco_restaurante, :id, :cep, :pais, :estado, :cidade, :rua, :numero, :complemento, :restaurante_id, :created_at, :updated_at
+json.url endereco_restaurante_url(endereco_restaurante, format: :json)

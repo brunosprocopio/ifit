@@ -1,0 +1,37 @@
+<%= form_for(@dados_cartao) do |f| %>
+  <% if @dados_cartao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dados_cartao.errors.count, "error") %> prohibited this dados_cartao from being saved:</h2>
+
+      <ul>
+      <% @dados_cartao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :vencimento %><br>
+    <%= f.date_select :vencimento %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br>
+    <%= f.number_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :cod_seguranca_integer %><br>
+    <%= f.text_field :cod_seguranca_integer %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.number_field :tipo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

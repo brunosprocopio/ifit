@@ -1,0 +1,2 @@
+module PagamentoAceitosHelper
+end

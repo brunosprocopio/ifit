@@ -1,0 +1,1 @@
+json.array! @prato_montados, partial: 'prato_montados/prato_montado', as: :prato_montado

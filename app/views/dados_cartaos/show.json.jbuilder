@@ -1,0 +1,1 @@
+json.partial! "dados_cartaos/dados_cartao", dados_cartao: @dados_cartao

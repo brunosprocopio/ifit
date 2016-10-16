@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @endereco_sessao.cep %>
+</p>
+
+<p>
+  <strong>Pais:</strong>
+  <%= @endereco_sessao.pais %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @endereco_sessao.estado %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @endereco_sessao.cidade %>
+</p>
+
+<p>
+  <strong>Rua:</strong>
+  <%= @endereco_sessao.rua %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @endereco_sessao.numero %>
+</p>
+
+<p>
+  <strong>Complemento:</strong>
+  <%= @endereco_sessao.complemento %>
+</p>
+
+<p>
+  <strong>Sessao:</strong>
+  <%= @endereco_sessao.sessao %>
+</p>
+
+<%= link_to 'Edit', edit_endereco_sessao_path(@endereco_sessao) %> |
+<%= link_to 'Back', endereco_sessaos_path %>

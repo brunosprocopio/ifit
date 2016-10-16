@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Alimento Precos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Preco</th>
+      <th>Prato montado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alimento_precos.each do |alimento_preco| %>
+      <tr>
+        <td><%= alimento_preco.nome %></td>
+        <td><%= alimento_preco.preco %></td>
+        <td><%= alimento_preco.prato_montado %></td>
+        <td><%= link_to 'Show', alimento_preco %></td>
+        <td><%= link_to 'Edit', edit_alimento_preco_path(alimento_preco) %></td>
+        <td><%= link_to 'Destroy', alimento_preco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alimento preco', new_alimento_preco_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@restaurantes_proximo) do |f| %>
+  <% if @restaurantes_proximo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurantes_proximo.errors.count, "error") %> prohibited this restaurantes_proximo from being saved:</h2>
+
+      <ul>
+      <% @restaurantes_proximo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :distancia %><br>
+    <%= f.number_field :distancia %>
+  </div>
+  <div class="field">
+    <%= f.label :sessao_id %><br>
+    <%= f.text_field :sessao_id %>
+  </div>
+  <div class="field">
+    <%= f.label :restaurante_id %><br>
+    <%= f.text_field :restaurante_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

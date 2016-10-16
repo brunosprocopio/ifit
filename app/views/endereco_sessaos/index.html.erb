@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Endereco Sessaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cep</th>
+      <th>Pais</th>
+      <th>Estado</th>
+      <th>Cidade</th>
+      <th>Rua</th>
+      <th>Numero</th>
+      <th>Complemento</th>
+      <th>Sessao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @endereco_sessaos.each do |endereco_sessao| %>
+      <tr>
+        <td><%= endereco_sessao.cep %></td>
+        <td><%= endereco_sessao.pais %></td>
+        <td><%= endereco_sessao.estado %></td>
+        <td><%= endereco_sessao.cidade %></td>
+        <td><%= endereco_sessao.rua %></td>
+        <td><%= endereco_sessao.numero %></td>
+        <td><%= endereco_sessao.complemento %></td>
+        <td><%= endereco_sessao.sessao %></td>
+        <td><%= link_to 'Show', endereco_sessao %></td>
+        <td><%= link_to 'Edit', edit_endereco_sessao_path(endereco_sessao) %></td>
+        <td><%= link_to 'Destroy', endereco_sessao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Endereco sessao', new_endereco_sessao_path %>

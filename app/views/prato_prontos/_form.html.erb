@@ -1,0 +1,25 @@
+<%= form_for(@prato_pronto) do |f| %>
+  <% if @prato_pronto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prato_pronto.errors.count, "error") %> prohibited this prato_pronto from being saved:</h2>
+
+      <ul>
+      <% @prato_pronto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :preco %><br>
+    <%= f.number_field :preco %>
+  </div>
+  <div class="field">
+    <%= f.label :prato_id %><br>
+    <%= f.text_field :prato_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

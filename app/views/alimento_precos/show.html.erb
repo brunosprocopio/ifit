@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @alimento_preco.nome %>
+</p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @alimento_preco.preco %>
+</p>
+
+<p>
+  <strong>Prato montado:</strong>
+  <%= @alimento_preco.prato_montado %>
+</p>
+
+<%= link_to 'Edit', edit_alimento_preco_path(@alimento_preco) %> |
+<%= link_to 'Back', alimento_precos_path %>

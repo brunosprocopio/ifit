@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pedidos:</strong>
+  <%= @pedidos_has_prato.pedidos %>
+</p>
+
+<p>
+  <strong>Pratos:</strong>
+  <%= @pedidos_has_prato.pratos %>
+</p>
+
+<%= link_to 'Edit', edit_pedidos_has_prato_path(@pedidos_has_prato) %> |
+<%= link_to 'Back', pedidos_has_pratos_path %>

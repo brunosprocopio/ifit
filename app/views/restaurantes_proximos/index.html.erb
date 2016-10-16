@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Restaurantes Proximos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distancia</th>
+      <th>Sessao</th>
+      <th>Restaurante</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurantes_proximos.each do |restaurantes_proximo| %>
+      <tr>
+        <td><%= restaurantes_proximo.distancia %></td>
+        <td><%= restaurantes_proximo.sessao %></td>
+        <td><%= restaurantes_proximo.restaurante %></td>
+        <td><%= link_to 'Show', restaurantes_proximo %></td>
+        <td><%= link_to 'Edit', edit_restaurantes_proximo_path(restaurantes_proximo) %></td>
+        <td><%= link_to 'Destroy', restaurantes_proximo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Restaurantes proximo', new_restaurantes_proximo_path %>

@@ -1,0 +1,1 @@
+json.partial! "endereco_restaurantes/endereco_restaurante", endereco_restaurante: @endereco_restaurante

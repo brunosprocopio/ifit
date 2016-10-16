@@ -1,0 +1,2 @@
+module PedidosHasPratosHelper
+end
