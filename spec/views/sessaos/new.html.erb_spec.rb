@@ -5,7 +5,7 @@ RSpec.describe "sessaos/new", type: :view do
     assign(:sessao, Sessao.new())
   end
 
-  it "renders new sessao form" do
+  xit "renders new sessao form" do
     render
 
     assert_select "form[action=?][method=?]", sessaos_path, "post" do

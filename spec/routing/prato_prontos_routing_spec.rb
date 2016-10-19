@@ -3,35 +3,35 @@ require "rails_helper"
 RSpec.describe PratoProntosController, type: :routing do
   describe "routing" do
 
-    it "routes to #index" do
+    xit "routes to #index" do
       expect(:get => "/prato_prontos").to route_to("prato_prontos#index")
     end
 
-    it "routes to #new" do
+    xit "routes to #new" do
       expect(:get => "/prato_prontos/new").to route_to("prato_prontos#new")
     end
 
-    it "routes to #show" do
+    xit "routes to #show" do
       expect(:get => "/prato_prontos/1").to route_to("prato_prontos#show", :id => "1")
     end
 
-    it "routes to #edit" do
+    xit "routes to #edit" do
       expect(:get => "/prato_prontos/1/edit").to route_to("prato_prontos#edit", :id => "1")
     end
 
-    it "routes to #create" do
+    xit "routes to #create" do
       expect(:post => "/prato_prontos").to route_to("prato_prontos#create")
     end
 
-    it "routes to #update via PUT" do
+    xit "routes to #update via PUT" do
       expect(:put => "/prato_prontos/1").to route_to("prato_prontos#update", :id => "1")
     end
 
-    it "routes to #update via PATCH" do
+    xit "routes to #update via PATCH" do
       expect(:patch => "/prato_prontos/1").to route_to("prato_prontos#update", :id => "1")
     end
 
-    it "routes to #destroy" do
+    xit "routes to #destroy" do
       expect(:delete => "/prato_prontos/1").to route_to("prato_prontos#destroy", :id => "1")
     end
 

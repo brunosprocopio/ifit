@@ -37,7 +37,7 @@ RSpec.describe PagamentoAceitosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all pagamento_aceitos as @pagamento_aceitos" do
+    xit "assigns all pagamento_aceitos as @pagamento_aceitos" do
       pagamento_aceito = PagamentoAceito.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:pagamento_aceitos)).to eq([pagamento_aceito])
@@ -45,7 +45,7 @@ RSpec.describe PagamentoAceitosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested pagamento_aceito as @pagamento_aceito" do
+    xit "assigns the requested pagamento_aceito as @pagamento_aceito" do
       pagamento_aceito = PagamentoAceito.create! valid_attributes
       get :show, params: {id: pagamento_aceito.to_param}, session: valid_session
       expect(assigns(:pagamento_aceito)).to eq(pagamento_aceito)
@@ -53,14 +53,14 @@ RSpec.describe PagamentoAceitosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new pagamento_aceito as @pagamento_aceito" do
+    xit "assigns a new pagamento_aceito as @pagamento_aceito" do
       get :new, params: {}, session: valid_session
       expect(assigns(:pagamento_aceito)).to be_a_new(PagamentoAceito)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested pagamento_aceito as @pagamento_aceito" do
+    xit "assigns the requested pagamento_aceito as @pagamento_aceito" do
       pagamento_aceito = PagamentoAceito.create! valid_attributes
       get :edit, params: {id: pagamento_aceito.to_param}, session: valid_session
       expect(assigns(:pagamento_aceito)).to eq(pagamento_aceito)
@@ -69,31 +69,31 @@ RSpec.describe PagamentoAceitosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new PagamentoAceito" do
+      xit "creates a new PagamentoAceito" do
         expect {
           post :create, params: {pagamento_aceito: valid_attributes}, session: valid_session
         }.to change(PagamentoAceito, :count).by(1)
       end
 
-      it "assigns a newly created pagamento_aceito as @pagamento_aceito" do
+      xit "assigns a newly created pagamento_aceito as @pagamento_aceito" do
         post :create, params: {pagamento_aceito: valid_attributes}, session: valid_session
         expect(assigns(:pagamento_aceito)).to be_a(PagamentoAceito)
         expect(assigns(:pagamento_aceito)).to be_persisted
       end
 
-      it "redirects to the created pagamento_aceito" do
+      xit "redirects to the created pagamento_aceito" do
         post :create, params: {pagamento_aceito: valid_attributes}, session: valid_session
         expect(response).to redirect_to(PagamentoAceito.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved pagamento_aceito as @pagamento_aceito" do
+      xit "assigns a newly created but unsaved pagamento_aceito as @pagamento_aceito" do
         post :create, params: {pagamento_aceito: invalid_attributes}, session: valid_session
         expect(assigns(:pagamento_aceito)).to be_a_new(PagamentoAceito)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {pagamento_aceito: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe PagamentoAceitosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested pagamento_aceito" do
+      xit "updates the requested pagamento_aceito" do
         pagamento_aceito = PagamentoAceito.create! valid_attributes
         put :update, params: {id: pagamento_aceito.to_param, pagamento_aceito: new_attributes}, session: valid_session
         pagamento_aceito.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested pagamento_aceito as @pagamento_aceito" do
+      xit "assigns the requested pagamento_aceito as @pagamento_aceito" do
         pagamento_aceito = PagamentoAceito.create! valid_attributes
         put :update, params: {id: pagamento_aceito.to_param, pagamento_aceito: valid_attributes}, session: valid_session
         expect(assigns(:pagamento_aceito)).to eq(pagamento_aceito)
       end
 
-      it "redirects to the pagamento_aceito" do
+      xit "redirects to the pagamento_aceito" do
         pagamento_aceito = PagamentoAceito.create! valid_attributes
         put :update, params: {id: pagamento_aceito.to_param, pagamento_aceito: valid_attributes}, session: valid_session
         expect(response).to redirect_to(pagamento_aceito)
@@ -127,13 +127,13 @@ RSpec.describe PagamentoAceitosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the pagamento_aceito as @pagamento_aceito" do
+      xit "assigns the pagamento_aceito as @pagamento_aceito" do
         pagamento_aceito = PagamentoAceito.create! valid_attributes
         put :update, params: {id: pagamento_aceito.to_param, pagamento_aceito: invalid_attributes}, session: valid_session
         expect(assigns(:pagamento_aceito)).to eq(pagamento_aceito)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         pagamento_aceito = PagamentoAceito.create! valid_attributes
         put :update, params: {id: pagamento_aceito.to_param, pagamento_aceito: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe PagamentoAceitosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested pagamento_aceito" do
+    xit "destroys the requested pagamento_aceito" do
       pagamento_aceito = PagamentoAceito.create! valid_attributes
       expect {
         delete :destroy, params: {id: pagamento_aceito.to_param}, session: valid_session
       }.to change(PagamentoAceito, :count).by(-1)
     end
 
-    it "redirects to the pagamento_aceitos list" do
+    xit "redirects to the pagamento_aceitos list" do
       pagamento_aceito = PagamentoAceito.create! valid_attributes
       delete :destroy, params: {id: pagamento_aceito.to_param}, session: valid_session
       expect(response).to redirect_to(pagamento_aceitos_url)

@@ -27,7 +27,7 @@ RSpec.describe "pagamento_aceitos/edit", type: :view do
     ))
   end
 
-  it "renders the edit pagamento_aceito form" do
+  xit "renders the edit pagamento_aceito form" do
     render
 
     assert_select "form[action=?][method=?]", pagamento_aceito_path(@pagamento_aceito), "post" do

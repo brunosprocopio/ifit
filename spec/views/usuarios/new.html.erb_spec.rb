@@ -12,7 +12,7 @@ RSpec.describe "usuarios/new", type: :view do
     ))
   end
 
-  it "renders new usuario form" do
+  xit "renders new usuario form" do
     render
 
     assert_select "form[action=?][method=?]", usuarios_path, "post" do

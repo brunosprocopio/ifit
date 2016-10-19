@@ -14,7 +14,7 @@ RSpec.describe "endereco_restaurantes/edit", type: :view do
     ))
   end
 
-  it "renders the edit endereco_restaurante form" do
+  xit "renders the edit endereco_restaurante form" do
     render
 
     assert_select "form[action=?][method=?]", endereco_restaurante_path(@endereco_restaurante), "post" do

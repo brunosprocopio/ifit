@@ -37,7 +37,7 @@ RSpec.describe AvaliacaosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all avaliacaos as @avaliacaos" do
+    xit "assigns all avaliacaos as @avaliacaos" do
       avaliacao = Avaliacao.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:avaliacaos)).to eq([avaliacao])
@@ -45,7 +45,7 @@ RSpec.describe AvaliacaosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested avaliacao as @avaliacao" do
+    xit "assigns the requested avaliacao as @avaliacao" do
       avaliacao = Avaliacao.create! valid_attributes
       get :show, params: {id: avaliacao.to_param}, session: valid_session
       expect(assigns(:avaliacao)).to eq(avaliacao)
@@ -53,14 +53,14 @@ RSpec.describe AvaliacaosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new avaliacao as @avaliacao" do
+    xit "assigns a new avaliacao as @avaliacao" do
       get :new, params: {}, session: valid_session
       expect(assigns(:avaliacao)).to be_a_new(Avaliacao)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested avaliacao as @avaliacao" do
+    xit "assigns the requested avaliacao as @avaliacao" do
       avaliacao = Avaliacao.create! valid_attributes
       get :edit, params: {id: avaliacao.to_param}, session: valid_session
       expect(assigns(:avaliacao)).to eq(avaliacao)
@@ -69,31 +69,31 @@ RSpec.describe AvaliacaosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Avaliacao" do
+      xit "creates a new Avaliacao" do
         expect {
           post :create, params: {avaliacao: valid_attributes}, session: valid_session
         }.to change(Avaliacao, :count).by(1)
       end
 
-      it "assigns a newly created avaliacao as @avaliacao" do
+      xit "assigns a newly created avaliacao as @avaliacao" do
         post :create, params: {avaliacao: valid_attributes}, session: valid_session
         expect(assigns(:avaliacao)).to be_a(Avaliacao)
         expect(assigns(:avaliacao)).to be_persisted
       end
 
-      it "redirects to the created avaliacao" do
+      xit "redirects to the created avaliacao" do
         post :create, params: {avaliacao: valid_attributes}, session: valid_session
         expect(response).to redirect_to(Avaliacao.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved avaliacao as @avaliacao" do
+      xit "assigns a newly created but unsaved avaliacao as @avaliacao" do
         post :create, params: {avaliacao: invalid_attributes}, session: valid_session
         expect(assigns(:avaliacao)).to be_a_new(Avaliacao)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {avaliacao: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe AvaliacaosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested avaliacao" do
+      xit "updates the requested avaliacao" do
         avaliacao = Avaliacao.create! valid_attributes
         put :update, params: {id: avaliacao.to_param, avaliacao: new_attributes}, session: valid_session
         avaliacao.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested avaliacao as @avaliacao" do
+      xit "assigns the requested avaliacao as @avaliacao" do
         avaliacao = Avaliacao.create! valid_attributes
         put :update, params: {id: avaliacao.to_param, avaliacao: valid_attributes}, session: valid_session
         expect(assigns(:avaliacao)).to eq(avaliacao)
       end
 
-      it "redirects to the avaliacao" do
+      xit "redirects to the avaliacao" do
         avaliacao = Avaliacao.create! valid_attributes
         put :update, params: {id: avaliacao.to_param, avaliacao: valid_attributes}, session: valid_session
         expect(response).to redirect_to(avaliacao)
@@ -127,13 +127,13 @@ RSpec.describe AvaliacaosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the avaliacao as @avaliacao" do
+      xit "assigns the avaliacao as @avaliacao" do
         avaliacao = Avaliacao.create! valid_attributes
         put :update, params: {id: avaliacao.to_param, avaliacao: invalid_attributes}, session: valid_session
         expect(assigns(:avaliacao)).to eq(avaliacao)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         avaliacao = Avaliacao.create! valid_attributes
         put :update, params: {id: avaliacao.to_param, avaliacao: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe AvaliacaosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested avaliacao" do
+    xit "destroys the requested avaliacao" do
       avaliacao = Avaliacao.create! valid_attributes
       expect {
         delete :destroy, params: {id: avaliacao.to_param}, session: valid_session
       }.to change(Avaliacao, :count).by(-1)
     end
 
-    it "redirects to the avaliacaos list" do
+    xit "redirects to the avaliacaos list" do
       avaliacao = Avaliacao.create! valid_attributes
       delete :destroy, params: {id: avaliacao.to_param}, session: valid_session
       expect(response).to redirect_to(avaliacaos_url)

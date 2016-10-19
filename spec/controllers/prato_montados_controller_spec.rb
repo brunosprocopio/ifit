@@ -37,7 +37,7 @@ RSpec.describe PratoMontadosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all prato_montados as @prato_montados" do
+    xit "assigns all prato_montados as @prato_montados" do
       prato_montado = PratoMontado.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:prato_montados)).to eq([prato_montado])
@@ -45,7 +45,7 @@ RSpec.describe PratoMontadosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested prato_montado as @prato_montado" do
+    xit "assigns the requested prato_montado as @prato_montado" do
       prato_montado = PratoMontado.create! valid_attributes
       get :show, params: {id: prato_montado.to_param}, session: valid_session
       expect(assigns(:prato_montado)).to eq(prato_montado)
@@ -53,14 +53,14 @@ RSpec.describe PratoMontadosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new prato_montado as @prato_montado" do
+    xit "assigns a new prato_montado as @prato_montado" do
       get :new, params: {}, session: valid_session
       expect(assigns(:prato_montado)).to be_a_new(PratoMontado)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested prato_montado as @prato_montado" do
+    xit "assigns the requested prato_montado as @prato_montado" do
       prato_montado = PratoMontado.create! valid_attributes
       get :edit, params: {id: prato_montado.to_param}, session: valid_session
       expect(assigns(:prato_montado)).to eq(prato_montado)
@@ -69,31 +69,31 @@ RSpec.describe PratoMontadosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new PratoMontado" do
+      xit "creates a new PratoMontado" do
         expect {
           post :create, params: {prato_montado: valid_attributes}, session: valid_session
         }.to change(PratoMontado, :count).by(1)
       end
 
-      it "assigns a newly created prato_montado as @prato_montado" do
+      xit "assigns a newly created prato_montado as @prato_montado" do
         post :create, params: {prato_montado: valid_attributes}, session: valid_session
         expect(assigns(:prato_montado)).to be_a(PratoMontado)
         expect(assigns(:prato_montado)).to be_persisted
       end
 
-      it "redirects to the created prato_montado" do
+      xit "redirects to the created prato_montado" do
         post :create, params: {prato_montado: valid_attributes}, session: valid_session
         expect(response).to redirect_to(PratoMontado.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved prato_montado as @prato_montado" do
+      xit "assigns a newly created but unsaved prato_montado as @prato_montado" do
         post :create, params: {prato_montado: invalid_attributes}, session: valid_session
         expect(assigns(:prato_montado)).to be_a_new(PratoMontado)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {prato_montado: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe PratoMontadosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested prato_montado" do
+      xit "updates the requested prato_montado" do
         prato_montado = PratoMontado.create! valid_attributes
         put :update, params: {id: prato_montado.to_param, prato_montado: new_attributes}, session: valid_session
         prato_montado.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested prato_montado as @prato_montado" do
+      xit "assigns the requested prato_montado as @prato_montado" do
         prato_montado = PratoMontado.create! valid_attributes
         put :update, params: {id: prato_montado.to_param, prato_montado: valid_attributes}, session: valid_session
         expect(assigns(:prato_montado)).to eq(prato_montado)
       end
 
-      it "redirects to the prato_montado" do
+      xit "redirects to the prato_montado" do
         prato_montado = PratoMontado.create! valid_attributes
         put :update, params: {id: prato_montado.to_param, prato_montado: valid_attributes}, session: valid_session
         expect(response).to redirect_to(prato_montado)
@@ -127,13 +127,13 @@ RSpec.describe PratoMontadosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the prato_montado as @prato_montado" do
+      xit "assigns the prato_montado as @prato_montado" do
         prato_montado = PratoMontado.create! valid_attributes
         put :update, params: {id: prato_montado.to_param, prato_montado: invalid_attributes}, session: valid_session
         expect(assigns(:prato_montado)).to eq(prato_montado)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         prato_montado = PratoMontado.create! valid_attributes
         put :update, params: {id: prato_montado.to_param, prato_montado: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe PratoMontadosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested prato_montado" do
+    xit "destroys the requested prato_montado" do
       prato_montado = PratoMontado.create! valid_attributes
       expect {
         delete :destroy, params: {id: prato_montado.to_param}, session: valid_session
       }.to change(PratoMontado, :count).by(-1)
     end
 
-    it "redirects to the prato_montados list" do
+    xit "redirects to the prato_montados list" do
       prato_montado = PratoMontado.create! valid_attributes
       delete :destroy, params: {id: prato_montado.to_param}, session: valid_session
       expect(response).to redirect_to(prato_montados_url)

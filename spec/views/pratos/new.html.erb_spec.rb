@@ -10,7 +10,7 @@ RSpec.describe "pratos/new", type: :view do
     ))
   end
 
-  it "renders new prato form" do
+  xit "renders new prato form" do
     render
 
     assert_select "form[action=?][method=?]", pratos_path, "post" do

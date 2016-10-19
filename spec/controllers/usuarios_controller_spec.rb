@@ -37,7 +37,7 @@ RSpec.describe UsuariosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all usuarios as @usuarios" do
+    xit "assigns all usuarios as @usuarios" do
       usuario = Usuario.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:usuarios)).to eq([usuario])
@@ -45,7 +45,7 @@ RSpec.describe UsuariosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested usuario as @usuario" do
+    xit "assigns the requested usuario as @usuario" do
       usuario = Usuario.create! valid_attributes
       get :show, params: {id: usuario.to_param}, session: valid_session
       expect(assigns(:usuario)).to eq(usuario)
@@ -53,14 +53,14 @@ RSpec.describe UsuariosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new usuario as @usuario" do
+    xit "assigns a new usuario as @usuario" do
       get :new, params: {}, session: valid_session
       expect(assigns(:usuario)).to be_a_new(Usuario)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested usuario as @usuario" do
+    xit "assigns the requested usuario as @usuario" do
       usuario = Usuario.create! valid_attributes
       get :edit, params: {id: usuario.to_param}, session: valid_session
       expect(assigns(:usuario)).to eq(usuario)
@@ -69,31 +69,31 @@ RSpec.describe UsuariosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Usuario" do
+      xit "creates a new Usuario" do
         expect {
           post :create, params: {usuario: valid_attributes}, session: valid_session
         }.to change(Usuario, :count).by(1)
       end
 
-      it "assigns a newly created usuario as @usuario" do
+      xit "assigns a newly created usuario as @usuario" do
         post :create, params: {usuario: valid_attributes}, session: valid_session
         expect(assigns(:usuario)).to be_a(Usuario)
         expect(assigns(:usuario)).to be_persisted
       end
 
-      it "redirects to the created usuario" do
+      xit "redirects to the created usuario" do
         post :create, params: {usuario: valid_attributes}, session: valid_session
         expect(response).to redirect_to(Usuario.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved usuario as @usuario" do
+      xit "assigns a newly created but unsaved usuario as @usuario" do
         post :create, params: {usuario: invalid_attributes}, session: valid_session
         expect(assigns(:usuario)).to be_a_new(Usuario)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {usuario: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe UsuariosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested usuario" do
+      xit "updates the requested usuario" do
         usuario = Usuario.create! valid_attributes
         put :update, params: {id: usuario.to_param, usuario: new_attributes}, session: valid_session
         usuario.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested usuario as @usuario" do
+      xit "assigns the requested usuario as @usuario" do
         usuario = Usuario.create! valid_attributes
         put :update, params: {id: usuario.to_param, usuario: valid_attributes}, session: valid_session
         expect(assigns(:usuario)).to eq(usuario)
       end
 
-      it "redirects to the usuario" do
+      xit "redirects to the usuario" do
         usuario = Usuario.create! valid_attributes
         put :update, params: {id: usuario.to_param, usuario: valid_attributes}, session: valid_session
         expect(response).to redirect_to(usuario)
@@ -127,13 +127,13 @@ RSpec.describe UsuariosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the usuario as @usuario" do
+      xit "assigns the usuario as @usuario" do
         usuario = Usuario.create! valid_attributes
         put :update, params: {id: usuario.to_param, usuario: invalid_attributes}, session: valid_session
         expect(assigns(:usuario)).to eq(usuario)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         usuario = Usuario.create! valid_attributes
         put :update, params: {id: usuario.to_param, usuario: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe UsuariosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested usuario" do
+    xit "destroys the requested usuario" do
       usuario = Usuario.create! valid_attributes
       expect {
         delete :destroy, params: {id: usuario.to_param}, session: valid_session
       }.to change(Usuario, :count).by(-1)
     end
 
-    it "redirects to the usuarios list" do
+    xit "redirects to the usuarios list" do
       usuario = Usuario.create! valid_attributes
       delete :destroy, params: {id: usuario.to_param}, session: valid_session
       expect(response).to redirect_to(usuarios_url)

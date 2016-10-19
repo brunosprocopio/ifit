@@ -37,7 +37,7 @@ RSpec.describe PedidosHasPratosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all pedidos_has_pratos as @pedidos_has_pratos" do
+    xit "assigns all pedidos_has_pratos as @pedidos_has_pratos" do
       pedidos_has_prato = PedidosHasPrato.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:pedidos_has_pratos)).to eq([pedidos_has_prato])
@@ -45,7 +45,7 @@ RSpec.describe PedidosHasPratosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested pedidos_has_prato as @pedidos_has_prato" do
+    xit "assigns the requested pedidos_has_prato as @pedidos_has_prato" do
       pedidos_has_prato = PedidosHasPrato.create! valid_attributes
       get :show, params: {id: pedidos_has_prato.to_param}, session: valid_session
       expect(assigns(:pedidos_has_prato)).to eq(pedidos_has_prato)
@@ -53,14 +53,14 @@ RSpec.describe PedidosHasPratosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new pedidos_has_prato as @pedidos_has_prato" do
+    xit "assigns a new pedidos_has_prato as @pedidos_has_prato" do
       get :new, params: {}, session: valid_session
       expect(assigns(:pedidos_has_prato)).to be_a_new(PedidosHasPrato)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested pedidos_has_prato as @pedidos_has_prato" do
+    xit "assigns the requested pedidos_has_prato as @pedidos_has_prato" do
       pedidos_has_prato = PedidosHasPrato.create! valid_attributes
       get :edit, params: {id: pedidos_has_prato.to_param}, session: valid_session
       expect(assigns(:pedidos_has_prato)).to eq(pedidos_has_prato)
@@ -69,31 +69,31 @@ RSpec.describe PedidosHasPratosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new PedidosHasPrato" do
+      xit "creates a new PedidosHasPrato" do
         expect {
           post :create, params: {pedidos_has_prato: valid_attributes}, session: valid_session
         }.to change(PedidosHasPrato, :count).by(1)
       end
 
-      it "assigns a newly created pedidos_has_prato as @pedidos_has_prato" do
+      xit "assigns a newly created pedidos_has_prato as @pedidos_has_prato" do
         post :create, params: {pedidos_has_prato: valid_attributes}, session: valid_session
         expect(assigns(:pedidos_has_prato)).to be_a(PedidosHasPrato)
         expect(assigns(:pedidos_has_prato)).to be_persisted
       end
 
-      it "redirects to the created pedidos_has_prato" do
+      xit "redirects to the created pedidos_has_prato" do
         post :create, params: {pedidos_has_prato: valid_attributes}, session: valid_session
         expect(response).to redirect_to(PedidosHasPrato.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved pedidos_has_prato as @pedidos_has_prato" do
+      xit "assigns a newly created but unsaved pedidos_has_prato as @pedidos_has_prato" do
         post :create, params: {pedidos_has_prato: invalid_attributes}, session: valid_session
         expect(assigns(:pedidos_has_prato)).to be_a_new(PedidosHasPrato)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {pedidos_has_prato: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe PedidosHasPratosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested pedidos_has_prato" do
+      xit "updates the requested pedidos_has_prato" do
         pedidos_has_prato = PedidosHasPrato.create! valid_attributes
         put :update, params: {id: pedidos_has_prato.to_param, pedidos_has_prato: new_attributes}, session: valid_session
         pedidos_has_prato.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested pedidos_has_prato as @pedidos_has_prato" do
+      xit "assigns the requested pedidos_has_prato as @pedidos_has_prato" do
         pedidos_has_prato = PedidosHasPrato.create! valid_attributes
         put :update, params: {id: pedidos_has_prato.to_param, pedidos_has_prato: valid_attributes}, session: valid_session
         expect(assigns(:pedidos_has_prato)).to eq(pedidos_has_prato)
       end
 
-      it "redirects to the pedidos_has_prato" do
+      xit "redirects to the pedidos_has_prato" do
         pedidos_has_prato = PedidosHasPrato.create! valid_attributes
         put :update, params: {id: pedidos_has_prato.to_param, pedidos_has_prato: valid_attributes}, session: valid_session
         expect(response).to redirect_to(pedidos_has_prato)
@@ -127,13 +127,13 @@ RSpec.describe PedidosHasPratosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the pedidos_has_prato as @pedidos_has_prato" do
+      xit "assigns the pedidos_has_prato as @pedidos_has_prato" do
         pedidos_has_prato = PedidosHasPrato.create! valid_attributes
         put :update, params: {id: pedidos_has_prato.to_param, pedidos_has_prato: invalid_attributes}, session: valid_session
         expect(assigns(:pedidos_has_prato)).to eq(pedidos_has_prato)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         pedidos_has_prato = PedidosHasPrato.create! valid_attributes
         put :update, params: {id: pedidos_has_prato.to_param, pedidos_has_prato: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe PedidosHasPratosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested pedidos_has_prato" do
+    xit "destroys the requested pedidos_has_prato" do
       pedidos_has_prato = PedidosHasPrato.create! valid_attributes
       expect {
         delete :destroy, params: {id: pedidos_has_prato.to_param}, session: valid_session
       }.to change(PedidosHasPrato, :count).by(-1)
     end
 
-    it "redirects to the pedidos_has_pratos list" do
+    xit "redirects to the pedidos_has_pratos list" do
       pedidos_has_prato = PedidosHasPrato.create! valid_attributes
       delete :destroy, params: {id: pedidos_has_prato.to_param}, session: valid_session
       expect(response).to redirect_to(pedidos_has_pratos_url)

@@ -9,7 +9,7 @@ RSpec.describe "restaurantes_proximos/edit", type: :view do
     ))
   end
 
-  it "renders the edit restaurantes_proximo form" do
+  xit "renders the edit restaurantes_proximo form" do
     render
 
     assert_select "form[action=?][method=?]", restaurantes_proximo_path(@restaurantes_proximo), "post" do

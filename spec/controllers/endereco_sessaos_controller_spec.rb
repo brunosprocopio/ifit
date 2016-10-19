@@ -37,7 +37,7 @@ RSpec.describe EnderecoSessaosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all endereco_sessaos as @endereco_sessaos" do
+    xit "assigns all endereco_sessaos as @endereco_sessaos" do
       endereco_sessao = EnderecoSessao.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:endereco_sessaos)).to eq([endereco_sessao])
@@ -45,7 +45,7 @@ RSpec.describe EnderecoSessaosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested endereco_sessao as @endereco_sessao" do
+    xit "assigns the requested endereco_sessao as @endereco_sessao" do
       endereco_sessao = EnderecoSessao.create! valid_attributes
       get :show, params: {id: endereco_sessao.to_param}, session: valid_session
       expect(assigns(:endereco_sessao)).to eq(endereco_sessao)
@@ -53,14 +53,14 @@ RSpec.describe EnderecoSessaosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new endereco_sessao as @endereco_sessao" do
+    xit "assigns a new endereco_sessao as @endereco_sessao" do
       get :new, params: {}, session: valid_session
       expect(assigns(:endereco_sessao)).to be_a_new(EnderecoSessao)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested endereco_sessao as @endereco_sessao" do
+    xit "assigns the requested endereco_sessao as @endereco_sessao" do
       endereco_sessao = EnderecoSessao.create! valid_attributes
       get :edit, params: {id: endereco_sessao.to_param}, session: valid_session
       expect(assigns(:endereco_sessao)).to eq(endereco_sessao)
@@ -69,31 +69,31 @@ RSpec.describe EnderecoSessaosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new EnderecoSessao" do
+      xit "creates a new EnderecoSessao" do
         expect {
           post :create, params: {endereco_sessao: valid_attributes}, session: valid_session
         }.to change(EnderecoSessao, :count).by(1)
       end
 
-      it "assigns a newly created endereco_sessao as @endereco_sessao" do
+      xit "assigns a newly created endereco_sessao as @endereco_sessao" do
         post :create, params: {endereco_sessao: valid_attributes}, session: valid_session
         expect(assigns(:endereco_sessao)).to be_a(EnderecoSessao)
         expect(assigns(:endereco_sessao)).to be_persisted
       end
 
-      it "redirects to the created endereco_sessao" do
+      xit "redirects to the created endereco_sessao" do
         post :create, params: {endereco_sessao: valid_attributes}, session: valid_session
         expect(response).to redirect_to(EnderecoSessao.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved endereco_sessao as @endereco_sessao" do
+      xit "assigns a newly created but unsaved endereco_sessao as @endereco_sessao" do
         post :create, params: {endereco_sessao: invalid_attributes}, session: valid_session
         expect(assigns(:endereco_sessao)).to be_a_new(EnderecoSessao)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {endereco_sessao: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe EnderecoSessaosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested endereco_sessao" do
+      xit "updates the requested endereco_sessao" do
         endereco_sessao = EnderecoSessao.create! valid_attributes
         put :update, params: {id: endereco_sessao.to_param, endereco_sessao: new_attributes}, session: valid_session
         endereco_sessao.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested endereco_sessao as @endereco_sessao" do
+      xit "assigns the requested endereco_sessao as @endereco_sessao" do
         endereco_sessao = EnderecoSessao.create! valid_attributes
         put :update, params: {id: endereco_sessao.to_param, endereco_sessao: valid_attributes}, session: valid_session
         expect(assigns(:endereco_sessao)).to eq(endereco_sessao)
       end
 
-      it "redirects to the endereco_sessao" do
+      xit "redirects to the endereco_sessao" do
         endereco_sessao = EnderecoSessao.create! valid_attributes
         put :update, params: {id: endereco_sessao.to_param, endereco_sessao: valid_attributes}, session: valid_session
         expect(response).to redirect_to(endereco_sessao)
@@ -127,13 +127,13 @@ RSpec.describe EnderecoSessaosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the endereco_sessao as @endereco_sessao" do
+      xit "assigns the endereco_sessao as @endereco_sessao" do
         endereco_sessao = EnderecoSessao.create! valid_attributes
         put :update, params: {id: endereco_sessao.to_param, endereco_sessao: invalid_attributes}, session: valid_session
         expect(assigns(:endereco_sessao)).to eq(endereco_sessao)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         endereco_sessao = EnderecoSessao.create! valid_attributes
         put :update, params: {id: endereco_sessao.to_param, endereco_sessao: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe EnderecoSessaosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested endereco_sessao" do
+    xit "destroys the requested endereco_sessao" do
       endereco_sessao = EnderecoSessao.create! valid_attributes
       expect {
         delete :destroy, params: {id: endereco_sessao.to_param}, session: valid_session
       }.to change(EnderecoSessao, :count).by(-1)
     end
 
-    it "redirects to the endereco_sessaos list" do
+    xit "redirects to the endereco_sessaos list" do
       endereco_sessao = EnderecoSessao.create! valid_attributes
       delete :destroy, params: {id: endereco_sessao.to_param}, session: valid_session
       expect(response).to redirect_to(endereco_sessaos_url)
