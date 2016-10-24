@@ -9,7 +9,7 @@ RSpec.describe "alimento_precos/show", type: :view do
     ))
   end
 
-  it "renders attributes in <p>" do
+  xit "renders attributes in <p>" do
     render
     expect(rendered).to match(/Nome/)
     expect(rendered).to match(/2/)

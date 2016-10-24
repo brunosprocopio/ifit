@@ -14,7 +14,7 @@ RSpec.describe "endereco_sessaos/new", type: :view do
     ))
   end
 
-  it "renders new endereco_sessao form" do
+  xit "renders new endereco_sessao form" do
     render
 
     assert_select "form[action=?][method=?]", endereco_sessaos_path, "post" do

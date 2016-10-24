@@ -37,7 +37,7 @@ RSpec.describe DadosCartaosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all dados_cartaos as @dados_cartaos" do
+    xit "assigns all dados_cartaos as @dados_cartaos" do
       dados_cartao = DadosCartao.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:dados_cartaos)).to eq([dados_cartao])
@@ -45,7 +45,7 @@ RSpec.describe DadosCartaosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested dados_cartao as @dados_cartao" do
+    xit "assigns the requested dados_cartao as @dados_cartao" do
       dados_cartao = DadosCartao.create! valid_attributes
       get :show, params: {id: dados_cartao.to_param}, session: valid_session
       expect(assigns(:dados_cartao)).to eq(dados_cartao)
@@ -53,14 +53,14 @@ RSpec.describe DadosCartaosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new dados_cartao as @dados_cartao" do
+    xit "assigns a new dados_cartao as @dados_cartao" do
       get :new, params: {}, session: valid_session
       expect(assigns(:dados_cartao)).to be_a_new(DadosCartao)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested dados_cartao as @dados_cartao" do
+    xit "assigns the requested dados_cartao as @dados_cartao" do
       dados_cartao = DadosCartao.create! valid_attributes
       get :edit, params: {id: dados_cartao.to_param}, session: valid_session
       expect(assigns(:dados_cartao)).to eq(dados_cartao)
@@ -69,31 +69,31 @@ RSpec.describe DadosCartaosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new DadosCartao" do
+      xit "creates a new DadosCartao" do
         expect {
           post :create, params: {dados_cartao: valid_attributes}, session: valid_session
         }.to change(DadosCartao, :count).by(1)
       end
 
-      it "assigns a newly created dados_cartao as @dados_cartao" do
+      xit "assigns a newly created dados_cartao as @dados_cartao" do
         post :create, params: {dados_cartao: valid_attributes}, session: valid_session
         expect(assigns(:dados_cartao)).to be_a(DadosCartao)
         expect(assigns(:dados_cartao)).to be_persisted
       end
 
-      it "redirects to the created dados_cartao" do
+      xit "redirects to the created dados_cartao" do
         post :create, params: {dados_cartao: valid_attributes}, session: valid_session
         expect(response).to redirect_to(DadosCartao.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved dados_cartao as @dados_cartao" do
+      xit "assigns a newly created but unsaved dados_cartao as @dados_cartao" do
         post :create, params: {dados_cartao: invalid_attributes}, session: valid_session
         expect(assigns(:dados_cartao)).to be_a_new(DadosCartao)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {dados_cartao: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe DadosCartaosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested dados_cartao" do
+      xit "updates the requested dados_cartao" do
         dados_cartao = DadosCartao.create! valid_attributes
         put :update, params: {id: dados_cartao.to_param, dados_cartao: new_attributes}, session: valid_session
         dados_cartao.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested dados_cartao as @dados_cartao" do
+      xit "assigns the requested dados_cartao as @dados_cartao" do
         dados_cartao = DadosCartao.create! valid_attributes
         put :update, params: {id: dados_cartao.to_param, dados_cartao: valid_attributes}, session: valid_session
         expect(assigns(:dados_cartao)).to eq(dados_cartao)
       end
 
-      it "redirects to the dados_cartao" do
+      xit "redirects to the dados_cartao" do
         dados_cartao = DadosCartao.create! valid_attributes
         put :update, params: {id: dados_cartao.to_param, dados_cartao: valid_attributes}, session: valid_session
         expect(response).to redirect_to(dados_cartao)
@@ -127,13 +127,13 @@ RSpec.describe DadosCartaosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the dados_cartao as @dados_cartao" do
+      xit "assigns the dados_cartao as @dados_cartao" do
         dados_cartao = DadosCartao.create! valid_attributes
         put :update, params: {id: dados_cartao.to_param, dados_cartao: invalid_attributes}, session: valid_session
         expect(assigns(:dados_cartao)).to eq(dados_cartao)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         dados_cartao = DadosCartao.create! valid_attributes
         put :update, params: {id: dados_cartao.to_param, dados_cartao: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe DadosCartaosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested dados_cartao" do
+    xit "destroys the requested dados_cartao" do
       dados_cartao = DadosCartao.create! valid_attributes
       expect {
         delete :destroy, params: {id: dados_cartao.to_param}, session: valid_session
       }.to change(DadosCartao, :count).by(-1)
     end
 
-    it "redirects to the dados_cartaos list" do
+    xit "redirects to the dados_cartaos list" do
       dados_cartao = DadosCartao.create! valid_attributes
       delete :destroy, params: {id: dados_cartao.to_param}, session: valid_session
       expect(response).to redirect_to(dados_cartaos_url)

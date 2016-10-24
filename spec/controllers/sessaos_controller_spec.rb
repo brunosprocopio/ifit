@@ -37,7 +37,7 @@ RSpec.describe SessaosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all sessaos as @sessaos" do
+    xit "assigns all sessaos as @sessaos" do
       sessao = Sessao.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:sessaos)).to eq([sessao])
@@ -45,7 +45,7 @@ RSpec.describe SessaosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested sessao as @sessao" do
+    xit "assigns the requested sessao as @sessao" do
       sessao = Sessao.create! valid_attributes
       get :show, params: {id: sessao.to_param}, session: valid_session
       expect(assigns(:sessao)).to eq(sessao)
@@ -53,14 +53,14 @@ RSpec.describe SessaosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new sessao as @sessao" do
+    xit "assigns a new sessao as @sessao" do
       get :new, params: {}, session: valid_session
       expect(assigns(:sessao)).to be_a_new(Sessao)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested sessao as @sessao" do
+    xit "assigns the requested sessao as @sessao" do
       sessao = Sessao.create! valid_attributes
       get :edit, params: {id: sessao.to_param}, session: valid_session
       expect(assigns(:sessao)).to eq(sessao)
@@ -69,31 +69,31 @@ RSpec.describe SessaosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Sessao" do
+      xit "creates a new Sessao" do
         expect {
           post :create, params: {sessao: valid_attributes}, session: valid_session
         }.to change(Sessao, :count).by(1)
       end
 
-      it "assigns a newly created sessao as @sessao" do
+      xit "assigns a newly created sessao as @sessao" do
         post :create, params: {sessao: valid_attributes}, session: valid_session
         expect(assigns(:sessao)).to be_a(Sessao)
         expect(assigns(:sessao)).to be_persisted
       end
 
-      it "redirects to the created sessao" do
+      xit "redirects to the created sessao" do
         post :create, params: {sessao: valid_attributes}, session: valid_session
         expect(response).to redirect_to(Sessao.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved sessao as @sessao" do
+      xit "assigns a newly created but unsaved sessao as @sessao" do
         post :create, params: {sessao: invalid_attributes}, session: valid_session
         expect(assigns(:sessao)).to be_a_new(Sessao)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {sessao: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe SessaosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested sessao" do
+      xit "updates the requested sessao" do
         sessao = Sessao.create! valid_attributes
         put :update, params: {id: sessao.to_param, sessao: new_attributes}, session: valid_session
         sessao.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested sessao as @sessao" do
+      xit "assigns the requested sessao as @sessao" do
         sessao = Sessao.create! valid_attributes
         put :update, params: {id: sessao.to_param, sessao: valid_attributes}, session: valid_session
         expect(assigns(:sessao)).to eq(sessao)
       end
 
-      it "redirects to the sessao" do
+      xit "redirects to the sessao" do
         sessao = Sessao.create! valid_attributes
         put :update, params: {id: sessao.to_param, sessao: valid_attributes}, session: valid_session
         expect(response).to redirect_to(sessao)
@@ -127,13 +127,13 @@ RSpec.describe SessaosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the sessao as @sessao" do
+      xit "assigns the sessao as @sessao" do
         sessao = Sessao.create! valid_attributes
         put :update, params: {id: sessao.to_param, sessao: invalid_attributes}, session: valid_session
         expect(assigns(:sessao)).to eq(sessao)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         sessao = Sessao.create! valid_attributes
         put :update, params: {id: sessao.to_param, sessao: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe SessaosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested sessao" do
+    xit "destroys the requested sessao" do
       sessao = Sessao.create! valid_attributes
       expect {
         delete :destroy, params: {id: sessao.to_param}, session: valid_session
       }.to change(Sessao, :count).by(-1)
     end
 
-    it "redirects to the sessaos list" do
+    xit "redirects to the sessaos list" do
       sessao = Sessao.create! valid_attributes
       delete :destroy, params: {id: sessao.to_param}, session: valid_session
       expect(response).to redirect_to(sessaos_url)

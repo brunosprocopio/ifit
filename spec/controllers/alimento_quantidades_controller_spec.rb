@@ -37,7 +37,7 @@ RSpec.describe AlimentoQuantidadesController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all alimento_quantidades as @alimento_quantidades" do
+    xit "assigns all alimento_quantidades as @alimento_quantidades" do
       alimento_quantidade = AlimentoQuantidade.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:alimento_quantidades)).to eq([alimento_quantidade])
@@ -45,7 +45,7 @@ RSpec.describe AlimentoQuantidadesController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested alimento_quantidade as @alimento_quantidade" do
+    xit "assigns the requested alimento_quantidade as @alimento_quantidade" do
       alimento_quantidade = AlimentoQuantidade.create! valid_attributes
       get :show, params: {id: alimento_quantidade.to_param}, session: valid_session
       expect(assigns(:alimento_quantidade)).to eq(alimento_quantidade)
@@ -53,14 +53,14 @@ RSpec.describe AlimentoQuantidadesController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new alimento_quantidade as @alimento_quantidade" do
+    xit "assigns a new alimento_quantidade as @alimento_quantidade" do
       get :new, params: {}, session: valid_session
       expect(assigns(:alimento_quantidade)).to be_a_new(AlimentoQuantidade)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested alimento_quantidade as @alimento_quantidade" do
+    xit "assigns the requested alimento_quantidade as @alimento_quantidade" do
       alimento_quantidade = AlimentoQuantidade.create! valid_attributes
       get :edit, params: {id: alimento_quantidade.to_param}, session: valid_session
       expect(assigns(:alimento_quantidade)).to eq(alimento_quantidade)
@@ -69,31 +69,31 @@ RSpec.describe AlimentoQuantidadesController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new AlimentoQuantidade" do
+      xit "creates a new AlimentoQuantidade" do
         expect {
           post :create, params: {alimento_quantidade: valid_attributes}, session: valid_session
         }.to change(AlimentoQuantidade, :count).by(1)
       end
 
-      it "assigns a newly created alimento_quantidade as @alimento_quantidade" do
+      xit "assigns a newly created alimento_quantidade as @alimento_quantidade" do
         post :create, params: {alimento_quantidade: valid_attributes}, session: valid_session
         expect(assigns(:alimento_quantidade)).to be_a(AlimentoQuantidade)
         expect(assigns(:alimento_quantidade)).to be_persisted
       end
 
-      it "redirects to the created alimento_quantidade" do
+      xit "redirects to the created alimento_quantidade" do
         post :create, params: {alimento_quantidade: valid_attributes}, session: valid_session
         expect(response).to redirect_to(AlimentoQuantidade.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved alimento_quantidade as @alimento_quantidade" do
+      xit "assigns a newly created but unsaved alimento_quantidade as @alimento_quantidade" do
         post :create, params: {alimento_quantidade: invalid_attributes}, session: valid_session
         expect(assigns(:alimento_quantidade)).to be_a_new(AlimentoQuantidade)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {alimento_quantidade: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe AlimentoQuantidadesController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested alimento_quantidade" do
+      xit "updates the requested alimento_quantidade" do
         alimento_quantidade = AlimentoQuantidade.create! valid_attributes
         put :update, params: {id: alimento_quantidade.to_param, alimento_quantidade: new_attributes}, session: valid_session
         alimento_quantidade.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested alimento_quantidade as @alimento_quantidade" do
+      xit "assigns the requested alimento_quantidade as @alimento_quantidade" do
         alimento_quantidade = AlimentoQuantidade.create! valid_attributes
         put :update, params: {id: alimento_quantidade.to_param, alimento_quantidade: valid_attributes}, session: valid_session
         expect(assigns(:alimento_quantidade)).to eq(alimento_quantidade)
       end
 
-      it "redirects to the alimento_quantidade" do
+      xit "redirects to the alimento_quantidade" do
         alimento_quantidade = AlimentoQuantidade.create! valid_attributes
         put :update, params: {id: alimento_quantidade.to_param, alimento_quantidade: valid_attributes}, session: valid_session
         expect(response).to redirect_to(alimento_quantidade)
@@ -127,13 +127,13 @@ RSpec.describe AlimentoQuantidadesController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the alimento_quantidade as @alimento_quantidade" do
+      xit "assigns the alimento_quantidade as @alimento_quantidade" do
         alimento_quantidade = AlimentoQuantidade.create! valid_attributes
         put :update, params: {id: alimento_quantidade.to_param, alimento_quantidade: invalid_attributes}, session: valid_session
         expect(assigns(:alimento_quantidade)).to eq(alimento_quantidade)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         alimento_quantidade = AlimentoQuantidade.create! valid_attributes
         put :update, params: {id: alimento_quantidade.to_param, alimento_quantidade: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe AlimentoQuantidadesController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested alimento_quantidade" do
+    xit "destroys the requested alimento_quantidade" do
       alimento_quantidade = AlimentoQuantidade.create! valid_attributes
       expect {
         delete :destroy, params: {id: alimento_quantidade.to_param}, session: valid_session
       }.to change(AlimentoQuantidade, :count).by(-1)
     end
 
-    it "redirects to the alimento_quantidades list" do
+    xit "redirects to the alimento_quantidades list" do
       alimento_quantidade = AlimentoQuantidade.create! valid_attributes
       delete :destroy, params: {id: alimento_quantidade.to_param}, session: valid_session
       expect(response).to redirect_to(alimento_quantidades_url)

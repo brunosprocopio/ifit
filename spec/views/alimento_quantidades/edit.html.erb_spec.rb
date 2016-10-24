@@ -9,7 +9,7 @@ RSpec.describe "alimento_quantidades/edit", type: :view do
     ))
   end
 
-  it "renders the edit alimento_quantidade form" do
+  xit "renders the edit alimento_quantidade form" do
     render
 
     assert_select "form[action=?][method=?]", alimento_quantidade_path(@alimento_quantidade), "post" do

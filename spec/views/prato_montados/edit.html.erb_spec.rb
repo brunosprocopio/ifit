@@ -7,7 +7,7 @@ RSpec.describe "prato_montados/edit", type: :view do
     ))
   end
 
-  it "renders the edit prato_montado form" do
+  xit "renders the edit prato_montado form" do
     render
 
     assert_select "form[action=?][method=?]", prato_montado_path(@prato_montado), "post" do

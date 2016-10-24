@@ -37,7 +37,7 @@ RSpec.describe AlimentoPrecosController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all alimento_precos as @alimento_precos" do
+    xit "assigns all alimento_precos as @alimento_precos" do
       alimento_preco = AlimentoPreco.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:alimento_precos)).to eq([alimento_preco])
@@ -45,7 +45,7 @@ RSpec.describe AlimentoPrecosController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested alimento_preco as @alimento_preco" do
+    xit "assigns the requested alimento_preco as @alimento_preco" do
       alimento_preco = AlimentoPreco.create! valid_attributes
       get :show, params: {id: alimento_preco.to_param}, session: valid_session
       expect(assigns(:alimento_preco)).to eq(alimento_preco)
@@ -53,14 +53,14 @@ RSpec.describe AlimentoPrecosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new alimento_preco as @alimento_preco" do
+    xit "assigns a new alimento_preco as @alimento_preco" do
       get :new, params: {}, session: valid_session
       expect(assigns(:alimento_preco)).to be_a_new(AlimentoPreco)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested alimento_preco as @alimento_preco" do
+    xit "assigns the requested alimento_preco as @alimento_preco" do
       alimento_preco = AlimentoPreco.create! valid_attributes
       get :edit, params: {id: alimento_preco.to_param}, session: valid_session
       expect(assigns(:alimento_preco)).to eq(alimento_preco)
@@ -69,31 +69,31 @@ RSpec.describe AlimentoPrecosController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new AlimentoPreco" do
+      xit "creates a new AlimentoPreco" do
         expect {
           post :create, params: {alimento_preco: valid_attributes}, session: valid_session
         }.to change(AlimentoPreco, :count).by(1)
       end
 
-      it "assigns a newly created alimento_preco as @alimento_preco" do
+      xit "assigns a newly created alimento_preco as @alimento_preco" do
         post :create, params: {alimento_preco: valid_attributes}, session: valid_session
         expect(assigns(:alimento_preco)).to be_a(AlimentoPreco)
         expect(assigns(:alimento_preco)).to be_persisted
       end
 
-      it "redirects to the created alimento_preco" do
+      xit "redirects to the created alimento_preco" do
         post :create, params: {alimento_preco: valid_attributes}, session: valid_session
         expect(response).to redirect_to(AlimentoPreco.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved alimento_preco as @alimento_preco" do
+      xit "assigns a newly created but unsaved alimento_preco as @alimento_preco" do
         post :create, params: {alimento_preco: invalid_attributes}, session: valid_session
         expect(assigns(:alimento_preco)).to be_a_new(AlimentoPreco)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {alimento_preco: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe AlimentoPrecosController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested alimento_preco" do
+      xit "updates the requested alimento_preco" do
         alimento_preco = AlimentoPreco.create! valid_attributes
         put :update, params: {id: alimento_preco.to_param, alimento_preco: new_attributes}, session: valid_session
         alimento_preco.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested alimento_preco as @alimento_preco" do
+      xit "assigns the requested alimento_preco as @alimento_preco" do
         alimento_preco = AlimentoPreco.create! valid_attributes
         put :update, params: {id: alimento_preco.to_param, alimento_preco: valid_attributes}, session: valid_session
         expect(assigns(:alimento_preco)).to eq(alimento_preco)
       end
 
-      it "redirects to the alimento_preco" do
+      xit "redirects to the alimento_preco" do
         alimento_preco = AlimentoPreco.create! valid_attributes
         put :update, params: {id: alimento_preco.to_param, alimento_preco: valid_attributes}, session: valid_session
         expect(response).to redirect_to(alimento_preco)
@@ -127,13 +127,13 @@ RSpec.describe AlimentoPrecosController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the alimento_preco as @alimento_preco" do
+      xit "assigns the alimento_preco as @alimento_preco" do
         alimento_preco = AlimentoPreco.create! valid_attributes
         put :update, params: {id: alimento_preco.to_param, alimento_preco: invalid_attributes}, session: valid_session
         expect(assigns(:alimento_preco)).to eq(alimento_preco)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         alimento_preco = AlimentoPreco.create! valid_attributes
         put :update, params: {id: alimento_preco.to_param, alimento_preco: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe AlimentoPrecosController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested alimento_preco" do
+    xit "destroys the requested alimento_preco" do
       alimento_preco = AlimentoPreco.create! valid_attributes
       expect {
         delete :destroy, params: {id: alimento_preco.to_param}, session: valid_session
       }.to change(AlimentoPreco, :count).by(-1)
     end
 
-    it "redirects to the alimento_precos list" do
+    xit "redirects to the alimento_precos list" do
       alimento_preco = AlimentoPreco.create! valid_attributes
       delete :destroy, params: {id: alimento_preco.to_param}, session: valid_session
       expect(response).to redirect_to(alimento_precos_url)

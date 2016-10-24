@@ -8,7 +8,7 @@ RSpec.describe "pedidos_has_pratos/new", type: :view do
     ))
   end
 
-  it "renders new pedidos_has_prato form" do
+  xit "renders new pedidos_has_prato form" do
     render
 
     assert_select "form[action=?][method=?]", pedidos_has_pratos_path, "post" do

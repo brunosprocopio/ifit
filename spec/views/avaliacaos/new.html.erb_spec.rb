@@ -10,7 +10,7 @@ RSpec.describe "avaliacaos/new", type: :view do
     ))
   end
 
-  it "renders new avaliacao form" do
+  xit "renders new avaliacao form" do
     render
 
     assert_select "form[action=?][method=?]", avaliacaos_path, "post" do

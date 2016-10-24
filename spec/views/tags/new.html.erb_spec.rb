@@ -8,7 +8,7 @@ RSpec.describe "tags/new", type: :view do
     ))
   end
 
-  it "renders new tag form" do
+  xit "renders new tag form" do
     render
 
     assert_select "form[action=?][method=?]", tags_path, "post" do

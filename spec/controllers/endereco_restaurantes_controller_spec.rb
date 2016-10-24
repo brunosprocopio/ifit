@@ -37,7 +37,7 @@ RSpec.describe EnderecoRestaurantesController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "assigns all endereco_restaurantes as @endereco_restaurantes" do
+    xit "assigns all endereco_restaurantes as @endereco_restaurantes" do
       endereco_restaurante = EnderecoRestaurante.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(assigns(:endereco_restaurantes)).to eq([endereco_restaurante])
@@ -45,7 +45,7 @@ RSpec.describe EnderecoRestaurantesController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the requested endereco_restaurante as @endereco_restaurante" do
+    xit "assigns the requested endereco_restaurante as @endereco_restaurante" do
       endereco_restaurante = EnderecoRestaurante.create! valid_attributes
       get :show, params: {id: endereco_restaurante.to_param}, session: valid_session
       expect(assigns(:endereco_restaurante)).to eq(endereco_restaurante)
@@ -53,14 +53,14 @@ RSpec.describe EnderecoRestaurantesController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new endereco_restaurante as @endereco_restaurante" do
+    xit "assigns a new endereco_restaurante as @endereco_restaurante" do
       get :new, params: {}, session: valid_session
       expect(assigns(:endereco_restaurante)).to be_a_new(EnderecoRestaurante)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested endereco_restaurante as @endereco_restaurante" do
+    xit "assigns the requested endereco_restaurante as @endereco_restaurante" do
       endereco_restaurante = EnderecoRestaurante.create! valid_attributes
       get :edit, params: {id: endereco_restaurante.to_param}, session: valid_session
       expect(assigns(:endereco_restaurante)).to eq(endereco_restaurante)
@@ -69,31 +69,31 @@ RSpec.describe EnderecoRestaurantesController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new EnderecoRestaurante" do
+      xit "creates a new EnderecoRestaurante" do
         expect {
           post :create, params: {endereco_restaurante: valid_attributes}, session: valid_session
         }.to change(EnderecoRestaurante, :count).by(1)
       end
 
-      it "assigns a newly created endereco_restaurante as @endereco_restaurante" do
+      xit "assigns a newly created endereco_restaurante as @endereco_restaurante" do
         post :create, params: {endereco_restaurante: valid_attributes}, session: valid_session
         expect(assigns(:endereco_restaurante)).to be_a(EnderecoRestaurante)
         expect(assigns(:endereco_restaurante)).to be_persisted
       end
 
-      it "redirects to the created endereco_restaurante" do
+      xit "redirects to the created endereco_restaurante" do
         post :create, params: {endereco_restaurante: valid_attributes}, session: valid_session
         expect(response).to redirect_to(EnderecoRestaurante.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved endereco_restaurante as @endereco_restaurante" do
+      xit "assigns a newly created but unsaved endereco_restaurante as @endereco_restaurante" do
         post :create, params: {endereco_restaurante: invalid_attributes}, session: valid_session
         expect(assigns(:endereco_restaurante)).to be_a_new(EnderecoRestaurante)
       end
 
-      it "re-renders the 'new' template" do
+      xit "re-renders the 'new' template" do
         post :create, params: {endereco_restaurante: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
@@ -106,20 +106,20 @@ RSpec.describe EnderecoRestaurantesController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested endereco_restaurante" do
+      xit "updates the requested endereco_restaurante" do
         endereco_restaurante = EnderecoRestaurante.create! valid_attributes
         put :update, params: {id: endereco_restaurante.to_param, endereco_restaurante: new_attributes}, session: valid_session
         endereco_restaurante.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested endereco_restaurante as @endereco_restaurante" do
+      xit "assigns the requested endereco_restaurante as @endereco_restaurante" do
         endereco_restaurante = EnderecoRestaurante.create! valid_attributes
         put :update, params: {id: endereco_restaurante.to_param, endereco_restaurante: valid_attributes}, session: valid_session
         expect(assigns(:endereco_restaurante)).to eq(endereco_restaurante)
       end
 
-      it "redirects to the endereco_restaurante" do
+      xit "redirects to the endereco_restaurante" do
         endereco_restaurante = EnderecoRestaurante.create! valid_attributes
         put :update, params: {id: endereco_restaurante.to_param, endereco_restaurante: valid_attributes}, session: valid_session
         expect(response).to redirect_to(endereco_restaurante)
@@ -127,13 +127,13 @@ RSpec.describe EnderecoRestaurantesController, type: :controller do
     end
 
     context "with invalid params" do
-      it "assigns the endereco_restaurante as @endereco_restaurante" do
+      xit "assigns the endereco_restaurante as @endereco_restaurante" do
         endereco_restaurante = EnderecoRestaurante.create! valid_attributes
         put :update, params: {id: endereco_restaurante.to_param, endereco_restaurante: invalid_attributes}, session: valid_session
         expect(assigns(:endereco_restaurante)).to eq(endereco_restaurante)
       end
 
-      it "re-renders the 'edit' template" do
+      xit "re-renders the 'edit' template" do
         endereco_restaurante = EnderecoRestaurante.create! valid_attributes
         put :update, params: {id: endereco_restaurante.to_param, endereco_restaurante: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
@@ -142,14 +142,14 @@ RSpec.describe EnderecoRestaurantesController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested endereco_restaurante" do
+    xit "destroys the requested endereco_restaurante" do
       endereco_restaurante = EnderecoRestaurante.create! valid_attributes
       expect {
         delete :destroy, params: {id: endereco_restaurante.to_param}, session: valid_session
       }.to change(EnderecoRestaurante, :count).by(-1)
     end
 
-    it "redirects to the endereco_restaurantes list" do
+    xit "redirects to the endereco_restaurantes list" do
       endereco_restaurante = EnderecoRestaurante.create! valid_attributes
       delete :destroy, params: {id: endereco_restaurante.to_param}, session: valid_session
       expect(response).to redirect_to(endereco_restaurantes_url)
