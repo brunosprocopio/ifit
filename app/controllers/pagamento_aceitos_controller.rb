@@ -1,8 +1,13 @@
 class PagamentoAceitosController < ApplicationController
   before_action :set_pagamento_aceito, only: [:show, :edit, :update, :destroy]
-
   # GET /pagamento_aceitos
   # GET /pagamento_aceitos.json
+  def initialize
+    @credit_card = false
+    @debit_card = false
+    @cash = false
+  end
+
   def index
     @pagamento_aceitos = PagamentoAceito.all
   end

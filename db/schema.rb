@@ -97,29 +97,12 @@ ActiveRecord::Schema.define(version: 20161016051116) do
   add_index "endereco_sessaos", ["sessao_id"], name: "index_endereco_sessaos_on_sessao_id", using: :btree
 
   create_table "pagamento_aceitos", force: :cascade do |t|
-    t.boolean  "cheque"
-    t.boolean  "credito_amer_expre"
-    t.boolean  "credito_diners"
-    t.boolean  "credito_goodcard"
-    t.boolean  "credito_hipercard"
-    t.boolean  "credito_mastercard"
-    t.boolean  "credito_verdecard"
-    t.boolean  "credito_visa"
-    t.boolean  "credito_banricompras"
-    t.boolean  "dinheiro"
-    t.boolean  "debito_banricompras"
-    t.boolean  "debito_bo"
-    t.boolean  "debito_mastercard"
-    t.boolean  "debito_visa"
-    t.boolean  "vale_alelo"
-    t.boolean  "vale_sodexo"
-    t.boolean  "vale_ticket"
-    t.boolean  "vale_valecard"
-    t.boolean  "vale_verocard"
-    t.boolean  "vale_srsmart"
+    t.boolean  "cash"
+    t.boolean  "credit_card"
+    t.boolean  "debit_card"
     t.integer  "restaurante_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "pagamento_aceitos", ["restaurante_id"], name: "index_pagamento_aceitos_on_restaurante_id", using: :btree
@@ -184,8 +167,13 @@ ActiveRecord::Schema.define(version: 20161016051116) do
     t.string   "razao_social"
     t.string   "usuario"
     t.string   "senha"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "latitude"
+    t.integer  "longitude"
+    t.boolean  "cartao_credito"
+    t.boolean  "cartao_debito"
+    t.boolean  "dinheiro"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "restaurantes_proximos", force: :cascade do |t|

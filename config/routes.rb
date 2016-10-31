@@ -12,9 +12,21 @@ Rails.application.routes.draw do
   resources :dados_cartaos
   resources :pedidos
   resources :usuarios
-  resources :restaurantes_proximos
+  resources :restaurantes_proximos do
+    collection do
+      get "lista_rest"
+      post "lista_rest"
+      get "show"
+      post "show"
+    end
+  end
   resources :endereco_restaurantes
-  resources :restaurantes
+  resources :restaurantes do
+    collection do
+      get "lista_rest"
+      post "lista_rest"
+    end
+  end
   resources :endereco_sessaos
   resources :sessaos
   root 'welcome#index'

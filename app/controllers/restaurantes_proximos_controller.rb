@@ -7,9 +7,16 @@ class RestaurantesProximosController < ApplicationController
     @restaurantes_proximos = RestaurantesProximo.all
   end
 
+  def lista_rest
+    @restaurantes_proximos = RestaurantesProximo.all
+    @restaurantes_proximos = @restaurantes_proximos.joins(:restaurante).where("@restaurantes_proximos.restaurante_id = restaurantes.id AND dinheiro = ? OR cartao_credito = ? OR cartao_debito = ?", params[:dinheiro], params[:cartao_credito], params[:cartao_debito])
+    render :action => :index
+  end
+
   # GET /restaurantes_proximos/1
   # GET /restaurantes_proximos/1.json
   def show
+    redirect_to "/restaurantes/show/#{params[:id]}"
   end
 
   # GET /restaurantes_proximos/new

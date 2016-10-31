@@ -6,7 +6,11 @@ class CreateRestaurantes < ActiveRecord::Migration
       t.string :razao_social
       t.string :usuario
       t.string :senha
-
+      t.integer :latitude
+      t.integer :longitude
+      t.boolean :cartao_credito
+      t.boolean :cartao_debito
+      t.boolean :dinheiro
       t.timestamps null: false
     end
   end
