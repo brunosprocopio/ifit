@@ -171,7 +171,8 @@ ActiveRecord::Schema.define(version: 20161016051116) do
   end
 
   create_table "restaurantes_proximos", force: :cascade do |t|
-    t.integer  "distancia"
+    t.integer  "latitude"
+    t.integer  "longitude"
     t.integer  "sessao_id"
     t.integer  "restaurante_id"
     t.datetime "created_at",     null: false
