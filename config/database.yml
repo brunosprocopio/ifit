@@ -8,7 +8,7 @@ development:
   host: localhost
   username: postgres
   password: pgadmin
-  database: development-ift
+  database: development-ifit
 
 test: &test
   <<: *default
