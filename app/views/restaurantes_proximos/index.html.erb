@@ -10,6 +10,9 @@
     </tr>
   </thead>
 
+  <tr>
+    <li><%=link_to 'Pratos', controller: "pratos" %></li>
+  </tr>
 
   <%= form_tag(controller: "restaurantes_proximos", action: "lista_rest", method: "get") do |f| %>
       <%= check_box_tag(:dinheiro) %>
