@@ -22,9 +22,9 @@ Feature: Plates filter
     When I click on the 'Pratos' button
     And I go to the plates page
     And I check the alemã, árabe and asiática (numbers 1,2,3) kitchen
-    And I do not check the brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, portuguesa, tailandesa (numbers 4,5,6,7,8,9,10,11,12)
+    And I do not check the brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, portuguesa, mediterranea, tailandesa (numbers 4,5,6,7,8,9,10,11,12)
     And I check the mountable type
-    And I click on the 'Filter' button
+    And I click on the 'Filtrar' button
     Then I should see plates "1,3"
 
   Scenario: Select every kitchen and mountable plate
@@ -45,9 +45,9 @@ Feature: Plates filter
     And I am in the restaurant page
     When I click on the 'Pratos' button
     And I go to the plates page
-    And I check the alemã, árabe, asiática, brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, portuguesa, tailandesa (numbers 1,2,3,4,5,6,7,8,9,10,11,12) kitchen
+    And I check the alemã, árabe, asiática, brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, mediterranea, portuguesa, tailandesa (numbers 1,2,3,4,5,6,7,8,9,10,11,12) kitchen
     And I check the mountable type
-    And I click on the 'Filter' button
+    And I click on the 'Filtrar' button
     Then I should see plates "1,3,5,7,9,11"
 
   Scenario: Select no kitchens and mountable plate
@@ -69,8 +69,8 @@ Feature: Plates filter
     When I click on the 'Pratos' button
     And I go to the plates page
     And I check the mountable type
-    And I do not check the alemã, árabe, asiática, brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, portuguesa, tailandesa (numbers 1,2,3,4,5,6,7,8,9,10,11,12)
-    And I click on the 'Filter' button
+    And I do not check the alemã, árabe, asiática, brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, mediterranea, portuguesa, tailandesa (numbers 1,2,3,4,5,6,7,8,9,10,11,12)
+    And I click on the 'Filtrar' button
     Then I should see plates "1,3,5,7,9,11"
 
   Scenario: Select brasileira, chinesa, francesa and italiana kitchen and predefined plate
@@ -94,7 +94,7 @@ Feature: Plates filter
     And I check the brasileira, chinesa, francesa and italiana (numbers 4,5,6,8) kitchen
     And I do not check the alemã, árabe, asiática, indiana, japonesa, mexicana, portuguesa, tailandesa (numbers 1,2,3,7,9,10,11,12)
     And I check the predefined type
-    And I click on the 'Filter' button
+    And I click on the 'Filtrar' button
     Then I should see plates "4,6,8"
 
   Scenario: Select every kitchen and mountable plate
@@ -115,9 +115,9 @@ Feature: Plates filter
     And I am in the restaurant page
     When I click on the 'Pratos' button
     And I go to the plates page
-    And I check the alemã, árabe, asiática, brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, portuguesa, tailandesa (numbers 1,2,3,4,5,6,7,8,9,10,11,12) kitchen
+    And I check the alemã, árabe, asiática, brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, mediterranea, portuguesa, tailandesa (numbers 1,2,3,4,5,6,7,8,9,10,11,12) kitchen
     And I check the predefined type
-    And I click on the 'Filter' button
+    And I click on the 'Filtrar' button
     Then I should see plates "2,4,6,8,10,12"
 
   Scenario: Select no kitchen and mountable plate
@@ -138,8 +138,8 @@ Feature: Plates filter
     And I am in the restaurant page
     When I click on the 'Pratos' button
     And I go to the plates page
-    And I do not check the alemã, árabe, asiática, brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, portuguesa, tailandesa (numbers 1,2,3,4,5,6,7,8,9,10,11,12)
+    And I do not check the alemã, árabe, asiática, brasileira, chinesa, francesa, indiana, italiana, japonesa, mexicana, mediterranea, portuguesa, tailandesa (numbers 1,2,3,4,5,6,7,8,9,10,11,12)
     And I check the predefined type
-    And I click on the 'Filter' button
+    And I click on the 'Filtrar' button
     Then I should see plates "2,4,6,8,10,12"
 

@@ -18,98 +18,26 @@ class PratosController < ApplicationController
   end
 
   def lista_pratos
-    @pratos = Prato.all
-    pratos1 = Prato.all
-    pratos2 = Prato.all
-    pratos3 = Prato.all
-    pratos4 = Prato.all
-    pratos5 = Prato.all
-    pratos6 = Prato.all
-    pratos7 = Prato.all
-    pratos8 = Prato.all
-    pratos9 = Prato.all
-    pratos10 = Prato.all
-    pratos11 = Prato.all
-    pratos12 = Prato.all
-    pratos13 = Prato.all
-    pratos14 = Prato.all
-    pratos15 = Prato.all
+    pratos1 = Prato.where("alema = ? OR arabe = ? OR asiatica = ? OR brasileira = ? OR chinesa = ? OR francesa = ? OR indiana = ? OR italiana = ? OR japonesa = ? OR mediterraneo = ? OR mexicana = ? OR portuguesa = ? OR tailandesa = ?", params[:alema], params[:arabe], params[:asiatica], params[:brasileira], params[:chinesa], params[:francesa], params[:indiana], params[:italiana], params[:japonesa], params[:mediterraneo], params[:mexicana], params[:portuguesa], params[:tailandesa])
+    pratos1 = Prato.where("tipo = ? AND (alema = ? OR arabe = ? OR asiatica = ? OR brasileira = ? OR chinesa = ? OR francesa = ? OR indiana = ? OR italiana = ? OR japonesa = ? OR mediterraneo = ? OR mexicana = ? OR portuguesa = ? OR tailandesa = ?)", 0, params[:alema], params[:arabe], params[:asiatica], params[:brasileira], params[:chinesa], params[:francesa], params[:indiana], params[:italiana], params[:japonesa], params[:mediterraneo], params[:mexicana], params[:portuguesa], params[:tailandesa]) if params[:prato_definido]
+    pratos2 = Prato.where("alema = ? OR arabe = ? OR asiatica = ? OR brasileira = ? OR chinesa = ? OR francesa = ? OR indiana = ? OR italiana = ? OR japonesa = ? OR mediterraneo = ? OR mexicana = ? OR portuguesa = ? OR tailandesa = ?", params[:alema], params[:arabe], params[:asiatica], params[:brasileira], params[:chinesa], params[:francesa], params[:indiana], params[:italiana], params[:japonesa], params[:mediterraneo], params[:mexicana], params[:portuguesa], params[:tailandesa])
+    pratos2 = Prato.where("tipo = ? AND (alema = ? OR arabe = ? OR asiatica = ? OR brasileira = ? OR chinesa = ? OR francesa = ? OR indiana = ? OR italiana = ? OR japonesa = ? OR mediterraneo = ? OR mexicana = ? OR portuguesa = ? OR tailandesa = ?)", 1, params[:alema], params[:arabe], params[:asiatica], params[:brasileira], params[:chinesa], params[:francesa], params[:indiana], params[:italiana], params[:japonesa], params[:mediterraneo], params[:mexicana], params[:portuguesa], params[:tailandesa]) if params[:prato_ndefinido]
 
-    if params[:alema] == true
-      pratos1 = Prato.where("cozinha = 1")
-    end
+    @pratos = pratos1.merge(pratos2)
 
-    if params[:arabe] == true
-      pratos2 = Prato.where("cozinha = 2")
-    end
-
-    if params[:asiatica] == true
-      pratos3 = Prato.where("cozinha = 3")
-    end
-
-    if params[:brasileira] == true
-      pratos4 = Prato.where("cozinha = 4")
-    end
-
-    if params[:chinesa] == true
-      pratos5 = Prato.where("cozinha = 5")
-    end
-
-    if params[:francesa] == true
-      pratos6 = Prato.where("cozinha = 6")
-    end
-
-    if params[:indiana] == true
-      pratos7 = Prato.where("cozinha = 7")
-    end
-
-    if params[:italiana] == true
-      pratos8 = Prato.where("cozinha = 8")
-    end
-
-    if params[:japonesa] == true
-      pratos9 = Prato.where("cozinha = 9")
-    end
-
-    if params[:mediterraneo] == true
-      pratos10 = Prato.where("cozinha = 10")
-    end
-
-    if params[:mexicana] == true
-      pratos11 = Prato.where("cozinha = 11")
-    end
-
-    if params[:portuguesa] == true
-      pratos12 = Prato.where("cozinha = 12")
-    end
-
-    if params[:tailandesa] == true
-      pratos13 = Prato.where("cozinha = 13")
-    end
-
-    if params[:prato_definido] == true
-      pratos14 = Prato.where("tipo = 1")
-    end
-
-    if params[:prato_ndefinido] == true
-      pratos15 = Prato.where("tipo == 0")
-    end
-
-    @pratos = pratos1 + pratos2 + pratos3 + pratos4 + pratos5 + pratos6 + pratos7 + pratos8 + pratos9 + pratos10 + pratos11 + pratos12 + pratos13
-   # query = ''
-    #if (params[:prato_definido] == true && params[:prato_ndefinido] == true) || (params[:prato_definido] == false && params[:prato_ndefinido] == false)
-    #  query = "tipo == 0 OR tipo == 1"
-   # elsif params[:definido] == false && params[:prato_ndefinido] == true
-   #   query = "tipo == 1"
-   # elsif params[:definido] == true && params[:prato_ndefinido] == false
-    #  query = "tipo == 0"
-    #end
-    #@pratos = @pratos.joins(:pratos).where(query)
-
-
+    if (params[:prato_definido] || params[:prato_ndefinido]) && (!params[:alema] && !params[:arabe] && !params[:asiatica] && !params[:brasileira] && !params[:chinesa] && !params[:francesa] && !params[:indiana] && !params[:italiana] && !params[:japonesa] && !params[:mediterranea] && !params[:mexicana] && !params[:portuguesa] && !params[:tailandesa])
+      if(params[:prato_definido])
+        @pratos  = Prato.where("tipo = 0")
+      end
+      if(params[:prato_ndefinido])
+        @pratos  = Prato.where("tipo = 1")
+      end
+      if(params[:prato_ndefinido] && params[:prato_definido])
+      @pratos = Prato.where("tipo = 1 OR tipo = 0")
+      end
+     end
     render :action => :index
   end
-
   # GET /pratos/new
   def new
     @prato = Prato.new
