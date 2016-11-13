@@ -22,7 +22,7 @@ Dado(/^que visitei a página de restaurantes próximos$/) do
 end
 
 Quando(/^preencho o campo de busca com "([^"]*)"$/) do |busca|
-  fill_in 'pesquisa', with: busca
+  fill_in 'search', with: busca
 end
 
 Quando(/^clico no botão 'Pesquisar'$/) do
@@ -33,10 +33,10 @@ Então(/^visualizo o estabelecimento "([^"]*)"$/) do |restaurante_id|
   expect(page).to have_link("restaurantes_proximos/show/#{restaurante_id}")
 end
 
-Então(/^visualizo o prato "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Então(/^visualizo o prato "([^"]*)"$/) do |prato_id|
+  expect(page).to have_link("pratos/show/#{prato_id}")
 end
 
-Então(/^visualizo na tela a seguinte mensagem:$/) do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Então(/^visualizo na tela a seguinte mensagem:$/) do |message|
+  expect(page).to have_content message
 end

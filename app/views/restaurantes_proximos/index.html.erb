@@ -4,10 +4,10 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Restaurante</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Restaurante</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
 
@@ -21,12 +21,31 @@
       <%= submit_tag("Filter") %>
   <% end %>
 
+  <%= form_tag('/restaurantes_proximos', :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Pesquisa" %>
+      <%= submit_tag "Pesquisar" %>
+  <% end %>
+
   <tbody>
-    <% @restaurantes_proximos.each do |restaurantes_proximo| %>
-      <tr>
-        <li><%=link_to "restaurantes_proximos/show/#{restaurantes_proximo.restaurante_id}" %></li>
-      </tr>
+  <div>
+    <% if @restaurantes_proximos.each do |restaurantes_proximo| %>
+        <tr>
+          <li><%= link_to "restaurantes_proximos/show/#{restaurantes_proximo.restaurante_id}" %></li>
+        </tr>
+    <% end.empty? %>
+        Não foram encontrados resultados com os critérios de busca. Por favor, tente novamente
+        com outros critérios.
     <% end %>
+  </div>
+  <div>
+    <% if @found_foods.each do |found_food| %>
+        <tr>
+          <li><%= link_to "pratos/show/#{found_food.id}" %></li>
+        </tr>
+    <% end.empty? %>
+        Não foram encontrados resultados com os critérios de busca. Por favor, tente novamente
+        com outros critérios.
+    <% end %>
+  </div>
   </tbody>
 </table>
-
