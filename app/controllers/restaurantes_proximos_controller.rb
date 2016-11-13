@@ -4,10 +4,33 @@ class RestaurantesProximosController < ApplicationController
   # GET /restaurantes_proximos
   # GET /restaurantes_proximos.json
   def index
-    @restaurantes_proximos = RestaurantesProximo.all
+    @restaurantes_proximos = Array.new
+    @found_foods = Array.new
+
+    if params[:search]
+
+      restaurants = Array.new
+
+      params[:search].split().each do |tag|
+        Tag.where(nome: tag).pluck(:prato_id).each() do |food_id|
+          Prato.where(id: food_id).pluck(:id, :restaurante_id).each do |food|
+            @found_foods << Prato.find(food[0])
+
+            unless restaurants.include?(food[1])
+              restaurants << food[1]
+            end
+          end
+        end
+      end
+
+      @restaurantes_proximos = RestaurantesProximo.where("restaurante_id IN (?)", restaurants)
+
+      logger.debug "PRATOS ENCONTRADOS: " << @found_foods.to_s
+    end
   end
 
   def lista_rest
+    @found_foods = Array.new
     @restaurantes_proximos = RestaurantesProximo.all
     @restaurantes_proximos = @restaurantes_proximos.joins(:restaurante).where("@restaurantes_proximos.restaurante_id = restaurantes.id AND dinheiro = ? OR cartao_credito = ? OR cartao_debito = ?", params[:dinheiro], params[:cartao_credito], params[:cartao_debito])
     render :action => :index
@@ -69,13 +92,13 @@ class RestaurantesProximosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_restaurantes_proximo
-      @restaurantes_proximo = RestaurantesProximo.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_restaurantes_proximo
+    @restaurantes_proximo = RestaurantesProximo.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def restaurantes_proximo_params
-      params.require(:restaurantes_proximo).permit(:distancia, :sessao_id, :restaurante_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def restaurantes_proximo_params
+    #params.require(:restaurantes_proximo).permit(:distancia, :sessao_id, :restaurante_id)
+  end
 end
