@@ -13,29 +13,49 @@ Funcionalidade: Busca por palavras-chave
       | 6  | Marmita Mutante     |
     * foram encontrados os seguintes pratos:
       | id | restaurante | nome do prato        | palavras-chave                         |
-      | 1  | 4           | Pizza de Batata-Doce | carboidrato, batata-doce, pizza        |
-      | 2  | 4           | Pizza de Frango      | carboidrato, proteína, frango, pizza   |
-      | 3  | 5           | Salada Arnold        | salada, alface, frango                 |
-      | 4  | 6           | Marmita de Carne     | marmita, proteína, carne, carboidrato  |
-      | 5  | 6           | Marmita de Frango    | marmita, proteína, frango, carboidrato |
+      | 13  | 4           | Pizza de Batata-Doce | carboidrato, batata-doce, pizza        |
+      | 14  | 4           | Pizza de Frango      | carboidrato, proteína, frango, pizza   |
+      | 15  | 5           | Salada Arnold        | salada, alface, frango                 |
+      | 16  | 6           | Marmita de Carne     | marmita, proteína, carne, carboidrato  |
+      | 17  | 6           | Marmita de Frango    | marmita, proteína, frango, carboidrato |
 
   Cenário: Busca de restaurante com sucesso
   Se o cliente realizar uma busca por uma palavra-chave e essa palavra existir na base,
-  os restaurantes encontrados são exibidos na tela.
+  os restaurantes encontrados são exibidos na tela. Esse cenário testa o retorno de um resultado.
 
     Dado que visitei a página de restaurantes próximos
     Quando preencho o campo de busca com "pizza"
     E clico no botão 'Pesquisar'
     Então visualizo o estabelecimento "4"
 
+  Cenário: Busca de restaurantes com sucesso
+  Se o cliente realizar uma busca por uma palavra-chave e essa palavra existir na base,
+  os restaurantes encontrados são exibidos na tela. Esse cenário testa o retorno de múltiplos resultados.
+
+    Dado que visitei a página de restaurantes próximos
+    Quando preencho o campo de busca com "carboidrato"
+    E clico no botão 'Pesquisar'
+    Então visualizo o estabelecimento "4"
+    E visualizo o estabelecimento "6"
+
   Cenário: Busca de prato com sucesso
   Se o cliente realizar uma busca por uma palavra-chave e essa palavra existir na base,
-  os pratos encontrados são exibidos na tela.
+  os pratos encontrados são exibidos na tela. Esse cenário testa o retorno de um resultado.
 
     Dado que visitei a página de restaurantes próximos
     Quando preencho o campo de busca com "salada"
     E clico no botão 'Pesquisar'
-    Então visualizo o prato "3"
+    Então visualizo o prato "15"
+
+  Cenário: Busca de pratos com sucesso
+  Se o cliente realizar uma busca por uma palavra-chave e essa palavra existir na base,
+  os pratos encontrados são exibidos na tela. Esse cenário testa o retorno de múltiplos resultados.
+
+    Dado que visitei a página de restaurantes próximos
+    Quando preencho o campo de busca com "pizza"
+    E clico no botão 'Pesquisar'
+    Então visualizo o prato "13"
+    E visualizo o prato "14"
 
   Cenário: Busca sem sucesso
   Se o cliente realizar uma busca por uma palavra-chave que não existe na base, é exibida
