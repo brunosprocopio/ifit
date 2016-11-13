@@ -67,6 +67,12 @@ RSpec.describe RestaurantesProximosController, type: :controller do
     end
   end
 
+  describe "#pesquisar" do
+    xit "realiza uma pesquisa" do
+
+    end
+  end
+
   describe "POST #create" do
     context "with valid params" do
       xit "creates a new RestaurantesProximo" do
