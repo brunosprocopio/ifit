@@ -146,7 +146,19 @@ ActiveRecord::Schema.define(version: 20161016051116) do
   create_table "pratos", force: :cascade do |t|
     t.string   "nome"
     t.string   "descricao"
-    t.integer  "cozinha"
+    t.boolean  "alema"
+    t.boolean  "arabe"
+    t.boolean  "asiatica"
+    t.boolean  "brasileira"
+    t.boolean  "chinesa"
+    t.boolean  "francesa"
+    t.boolean  "indiana"
+    t.boolean  "italiana"
+    t.boolean  "japonesa"
+    t.boolean  "mediterraneo"
+    t.boolean  "mexicana"
+    t.boolean  "portuguesa"
+    t.boolean  "tailandesa"
     t.integer  "tipo"
     t.integer  "restaurante_id"
     t.datetime "created_at",     null: false
@@ -171,7 +183,8 @@ ActiveRecord::Schema.define(version: 20161016051116) do
   end
 
   create_table "restaurantes_proximos", force: :cascade do |t|
-    t.integer  "distancia"
+    t.integer  "latitude"
+    t.integer  "longitude"
     t.integer  "sessao_id"
     t.integer  "restaurante_id"
     t.datetime "created_at",     null: false

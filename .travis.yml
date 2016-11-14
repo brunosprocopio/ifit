@@ -4,6 +4,7 @@ rvm:
 script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
+- bundle exec rake db:seed
 - bundle exec rake spec
 - bundle exec rake cucumber
 deploy:
@@ -12,3 +13,4 @@ deploy:
     secure: Lekr/XubCj/Uqqnj6bK+qXzIdXFC1zmcUKM41xaE+OUDz27luFA22RioSBotWVcmg8GT92hSWzdulO5kaZ4hto2ERUy2WAM5aildRV1Oy1AQbhgkxozyZs0N1eAHEeKNICHoUbojB32I7VLtXVdkb92cNma2Sowj3HKspduWLHNS6hpO/cnGMxafwkOYE12sUSvSlcmKZwOBJi1zZpZUe9e4oOpIU3aVR83r7FOIaBjLQPSFXl5/lnbqrYnlXqP8Xj1SE+7IEt++5RQXjQZ242J6dR58gasyy+k9f9vBRGtbFk+eCc0NnHAkGZMz2j0wiFCyTr+FFUoafcN9MGy8Ex2LDbAUcMfmH5nYLw5+h1uEF/vhmUAZJqpUd6kCNB9HfS+Sx4ZYMuxpo7T3Z8Lj3akD23ictGIYJubDiVuMGBbJR5c5tRfF6UuOYGwhiCi8eSHa9CzhZ4E90U1J5Mcrm9mS5jIm16JUG+tOmjFZ011mcV4I4QrxyxIkoYQnvpwEdNAYHptea1QP/askQ0iaKlQm8+DGp/dGG/3xcwAboLMqJDjWxBIzuj/IzhTvg2bwpDIsg642y5rUHws4bc3kUrb1Ji9bPpAmfRkpnwE7L6I5dYQ4xscGtDQ0L6CkJqQcPijbRhqtAORsWbOlJ+VF+H4t2CHzipFFscP3+WB3vMI=
   app: mighty-tor-61069
   on: master
+

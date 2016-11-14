@@ -8,7 +8,14 @@ Rails.application.routes.draw do
   resources :prato_montados
   resources :prato_prontos
   resources :pedidos_has_pratos
-  resources :pratos
+  resources :pratos do
+    collection do
+      get "lista_pratos"
+      post "lista_pratos"
+      get "show"
+      post "show"
+    end
+  end
   resources :dados_cartaos
   resources :pedidos
   resources :usuarios
