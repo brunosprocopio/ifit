@@ -1,3 +1,5 @@
+require 'pg'
+
 class RestaurantesProximosController < ApplicationController
   before_action :set_restaurantes_proximo, only: [:show, :edit, :update, :destroy]
 
@@ -17,13 +19,16 @@ class RestaurantesProximosController < ApplicationController
             @found_foods << Prato.find(food[0])
 
             unless restaurants.include?(food[1])
-              restaurants << food[1]
+              restaurants << food[1]                  #id_restaurant
             end
           end
         end
       end
 
-      @restaurantes_proximos = RestaurantesProximo.where("restaurante_id IN (?)", restaurants)
+      puts 'session'
+      puts session[:sessao_id]
+
+      @restaurantes_proximos = RestaurantesProximo.where("restaurante_id IN (?)", restaurants).where(sessao_id: session[:sessao_id])
 
       logger.debug "PRATOS ENCONTRADOS: " << @found_foods.to_s
     end
@@ -32,7 +37,10 @@ class RestaurantesProximosController < ApplicationController
   def lista_rest
     @found_foods = Array.new
     @restaurantes_proximos = RestaurantesProximo.all
-    @restaurantes_proximos = @restaurantes_proximos.joins(:restaurante).where("@restaurantes_proximos.restaurante_id = restaurantes.id AND dinheiro = ? OR cartao_credito = ? OR cartao_debito = ?", params[:dinheiro], params[:cartao_credito], params[:cartao_debito])
+#    @restaurantes_proximos.each do |restaurantes_proximos|
+#      puts restaurantes_proximos.id
+#    end
+    @restaurantes_proximos = @restaurantes_proximos.joins(:restaurante).where("@restaurantes_proximos.restaurante_id = restaurantes.id AND dinheiro = ? OR cartao_credito = ? OR cartao_debito = ?", params[:dinheiro], params[:cartao_credito], params[:cartao_debito]).where(sessao_id: session[:sessao_id])
     render :action => :index
   end
 
@@ -49,6 +57,23 @@ class RestaurantesProximosController < ApplicationController
 
   # GET /restaurantes_proximos/1/edit
   def edit
+  end
+
+  def create_nearby_restaurants_by_cep
+
+    @sessao = Sessao.create
+    session[:sessao_id] = @sessao.id
+    session[:cep] = params[:cep]
+
+    @r = WelcomeController.get_location_from_cep(params[:cep])
+
+    WelcomeController.create_nearby_restaurants_by_lat_lng(@r, @sessao.id)
+
+    @restaurantes_proximos = RestaurantesProximo.where(:sessao_id => @sessao.id)
+
+    @found_foods = []
+
+    render :action => :index
   end
 
   # POST /restaurantes_proximos
@@ -94,6 +119,9 @@ class RestaurantesProximosController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_restaurantes_proximo
+    #puts "RESTAURANTES PRÓXIMOS"
+    puts params[:id]
+    #puts "RESTAURANTES PRÓXIMOS end"
     @restaurantes_proximo = RestaurantesProximo.find(params[:id])
   end
 

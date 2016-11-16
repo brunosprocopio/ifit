@@ -1,12 +1,11 @@
 <h2>Hello World</h2>
 
-<%= form_tag restaurantes_proximos_path, method: :get do
+<%= form_tag create_nearby_restaurants_by_cep_restaurantes_proximos_path, method: :post do
 
 %>
-
     <center>
       <h1><%= label_tag "CEP"%></h1>
-      <%= text_field_tag "CEP"%><br>
+      <%= text_field_tag :cep%><br>
       <%= submit_tag "Pesquisar"%>
     </center>
 <%end%>

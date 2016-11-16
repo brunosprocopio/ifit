@@ -23,8 +23,9 @@ Rails.application.routes.draw do
     collection do
       get "lista_rest"
       post "lista_rest"
-      get "show"
-      post "show"
+      post "create_nearby_restaurants_by_cep"
+      #get "show"
+      #post "show"
     end
   end
   resources :endereco_restaurantes

@@ -23,4 +23,3 @@ Then(/^I should see restaurants "([^"]*)"$/) do |arg1|
     expect(page).to have_link("restaurantes_proximos/show/#{entry}")
   end
 end
-
