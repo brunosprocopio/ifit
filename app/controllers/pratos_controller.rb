@@ -10,10 +10,11 @@ class PratosController < ApplicationController
   # GET /pratos/1
   # GET /pratos/1.json
   def show
-    if Pratos.find(params[:id]).tipo == 0
-      redirect_to "pratos_montados/show/#{params[:id]}"
+    @pratos = Prato.all
+    if @pratos.find(params[:id]).tipo == 0
+      redirect_to "/prato_montados/#{params[:id]}"
     else
-      redirect_to "pratos_prontos/show/#{params[:id]}"
+      redirect_to "/prato_prontos/#{params[:id]}"
     end
   end
 

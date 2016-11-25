@@ -5,15 +5,22 @@ Rails.application.routes.draw do
   resources :tags
   resources :alimento_quantidades
   resources :alimento_precos
-  resources :prato_montados
-  resources :prato_prontos
+  resources :prato_montados do
+    collection do
+      get "prato_montados/:id", to: "prato_montados#show"
+    end
+  end
+  resources :prato_prontos do
+    collection do
+      get "prato_prontos/:id", to: "prato_prontos#show"
+    end
+  end
   resources :pedidos_has_pratos
   resources :pratos do
     collection do
       get "lista_pratos"
       post "lista_pratos"
-      get "show"
-      post "show"
+      get "pratos/:id", to: "pratos#show"
     end
   end
   resources :dados_cartaos
@@ -23,8 +30,7 @@ Rails.application.routes.draw do
     collection do
       get "lista_rest"
       post "lista_rest"
-      get "show"
-      post "show"
+      get "restaurantes_proximos/:id", to: "restaurantes_proximos#show"
     end
   end
   resources :endereco_restaurantes

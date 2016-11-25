@@ -64,7 +64,7 @@ end
 
 Then(/^I should see plates "([^"]*)"$/) do |arg1|
   arg1.split(',').each do |entry|
-    expect(page).to have_link("pratos/show/#{entry}")
+    expect(page).to have_link("pratos/#{entry}")
   end
 end
 

@@ -39,7 +39,7 @@ class RestaurantesProximosController < ApplicationController
   # GET /restaurantes_proximos/1
   # GET /restaurantes_proximos/1.json
   def show
-    redirect_to "/restaurantes/show/#{params[:id]}"
+    redirect_to "/restaurantes/#{params[:id]}"
   end
 
   # GET /restaurantes_proximos/new
