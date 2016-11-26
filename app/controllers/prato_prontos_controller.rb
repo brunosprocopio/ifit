@@ -10,6 +10,9 @@ class PratoProntosController < ApplicationController
   # GET /prato_prontos/1
   # GET /prato_prontos/1.json
   def show
+    @prato = Prato.find(params[:id])
+    @pp = PratoPronto.find_by_prato_id(params[:id])
+    @restaurante = Restaurante.find(@prato.restaurante_id)
   end
 
   # GET /prato_prontos/new

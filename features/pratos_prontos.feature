@@ -1,4 +1,4 @@
-Feature: Mounted Plate
+Feature: Already mounted Plate
   In order to check the mounted plate page
   As a system user or not
   I want to be able to access the page and see the food's information, price and have the option to buy it
@@ -18,10 +18,9 @@ Feature: Mounted Plate
       | 10 |   p10    |      d10      |    10 (mediterranea) |    0 (pronto)   |        1         |
       | 11 |   p11    |      d11      |    11 (mexicana)     |    1 (marmita)  |        2         |
       | 12 |   p12    |      d12      |    12 (portuguesa)   |    0 (pronto)   |        3         |
-    And I click on the plate "1" link
-    Then I should be redirected to plate "1" page
-    And I should see plate "1" description
-    And I should see the kitchen type of the plate "1"
-    And I should see the price of the plate
-    And I should see the restaurant link "1" that owns the plate
+    And I click on the plate "2" link
+    Then I should be redirected to plate "2" page
+    And I should see plate "2" description
+    And I should see the price of the plate "2"
+    And I should see the restaurant link "2" that owns the plate
     And I should see the 'Comprar' button

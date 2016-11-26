@@ -24,7 +24,11 @@ Rails.application.routes.draw do
     end
   end
   resources :dados_cartaos
-  resources :pedidos
+  resources :pedidos do
+  collection do
+    get "pedidos/:id", to: "pedidos#compra"
+  end
+end
   resources :usuarios
   resources :restaurantes_proximos do
     collection do

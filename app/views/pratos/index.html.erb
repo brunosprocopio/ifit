@@ -47,7 +47,7 @@
   <tbody>
     <% @pratos.each do |pr| %>
         <tr>
-          <li><%=link_to "pratos/#{pr.id}" %></li>
+          <li><%=link_to "Prato #{pr.id}", pr %></li>
         </tr>
     <% end %>
   </tbody>
