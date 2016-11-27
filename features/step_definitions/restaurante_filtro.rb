@@ -1,7 +1,3 @@
-Before do
-
-end
-
 Given(/^I visit the restaurant page$/) do
   visit '/restaurantes_proximos'
 end
@@ -20,7 +16,7 @@ end
 
 Then(/^I should see restaurants "([^"]*)"$/) do |arg1|
    arg1.split(',').each do |entry|
-    expect(page).to have_link("restaurantes_proximos/show/#{entry}")
+    expect(page).to have_link("Restaurante #{entry}", href: "/restaurantes_proximos/#{entry}")
   end
 end
 

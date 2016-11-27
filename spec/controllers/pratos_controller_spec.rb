@@ -20,6 +20,14 @@ require 'rails_helper'
 
 RSpec.describe PratosController, type: :controller do
 
+  before(:each) do
+    Sessao.create :id => 1
+    Restaurante.create :id => 2, :nome => "rest2", :usuario => "teste2", :senha => "teste2", :cartao_debito => false, :cartao_credito => true, :dinheiro => true
+    RestaurantesProximo.create :id => 2, :sessao_id => 1, :restaurante_id => 2
+    Prato.create :id => 2, :nome => "p2", :descricao => "d2", :alema => 0, :arabe => 1, :asiatica => 0, :brasileira => 0, :chinesa => 0, :francesa => 0, :indiana => 0, :italiana => 0, :japonesa => 0, :mediterraneo => 0, :mexicana => 0, :portuguesa => 0, :tailandesa => 0, :tipo => 0, :restaurante_id => 2
+    PratoPronto.create :id => 1, :preco => 50, :prato_id => 2
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Prato. As you add validations to Prato, be sure to
   # adjust the attributes here as well.
@@ -44,11 +52,17 @@ RSpec.describe PratosController, type: :controller do
     end
   end
 
-  describe "GET #show" do
-    xit "assigns the requested prato as @prato" do
-      prato = Prato.create! valid_attributes
-      get :show, params: {id: prato.to_param}, session: valid_session
-      expect(assigns(:prato)).to eq(prato)
+  describe "GET #show/:id" do
+    it "should find a plate (if on database) and only one plate with the corresponded id" do
+      get :show, id: 2
+
+      @prato = Prato.find(2)
+      @prato_pronto = PratoPronto.find_by_prato_id(2)
+      @restaurante = Restaurante.find(2)
+
+      expect(@prato.is_a?(Prato)).to be_truthy
+      expect(@prato_pronto.is_a?(PratoPronto)).to be_truthy
+      expect(@restaurante.is_a?(Restaurante)).to be_truthy
     end
   end
 

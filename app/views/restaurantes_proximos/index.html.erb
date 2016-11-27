@@ -33,7 +33,7 @@
   <div>
     <% if @restaurantes_proximos.each do |restaurantes_proximo| %>
         <tr>
-          <li><%= link_to "restaurantes_proximos/show/#{restaurantes_proximo.restaurante_id}" %></li>
+          <li><%= link_to "Restaurante #{restaurantes_proximo.id}", restaurantes_proximo %></li>
         </tr>
     <% end.empty? %>
         Não foram encontrados resultados com os critérios de busca. Por favor, tente novamente
@@ -43,7 +43,7 @@
   <div>
     <% if @found_foods.each do |found_food| %>
         <tr>
-          <li><%= link_to "pratos/show/#{found_food.id}" %></li>
+          <li><%= link_to "Prato #{found_food.id}", found_food %></li>
         </tr>
     <% end.empty? %>
         Não foram encontrados resultados com os critérios de busca. Por favor, tente novamente

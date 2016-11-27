@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 20161016051116) do
   add_index "prato_montados", ["prato_id"], name: "index_prato_montados_on_prato_id", using: :btree
 
   create_table "prato_prontos", force: :cascade do |t|
-    t.string   "preco"
+    t.float    "preco"
     t.integer  "prato_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

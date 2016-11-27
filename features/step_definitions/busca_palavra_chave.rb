@@ -30,11 +30,11 @@ Quando(/^clico no botão 'Pesquisar'$/) do
 end
 
 Então(/^visualizo o estabelecimento "([^"]*)"$/) do |restaurante_id|
-  expect(page).to have_link("restaurantes_proximos/show/#{restaurante_id}")
+  expect(page).to have_link("Restaurante #{restaurante_id}" ,"/restaurantes_proximos/#{restaurante_id}")
 end
 
 Então(/^visualizo o prato "([^"]*)"$/) do |prato_id|
-  expect(page).to have_link("pratos/show/#{prato_id}")
+  expect(page).to have_link("Prato #{prato_id}", "/pratos/#{prato_id}")
 end
 
 Então(/^visualizo na tela a seguinte mensagem:$/) do |message|

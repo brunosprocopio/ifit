@@ -12,6 +12,9 @@ class PedidosController < ApplicationController
   def show
   end
 
+  def compra
+  end
+
   # GET /pedidos/new
   def new
     @pedido = Pedido.new
