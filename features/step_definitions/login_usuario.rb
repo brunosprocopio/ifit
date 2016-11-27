@@ -1,6 +1,7 @@
 Dado(/^existem os seguintes usuários cadastrados no sistema:$/) do |users|
   users.hashes.each do |user|
-    Usuario.create :usuario => user["usuario"], :senha => user["senha"], :id => user["id"]
+    @user = Usuario.new(user)
+    @user.save
   end
 end
 
