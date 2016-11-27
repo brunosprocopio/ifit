@@ -15,15 +15,14 @@
   <%= @restaurante.razao_social %>
 </p>
 
-<p>
-  <strong>Usuario:</strong>
-  <%= @restaurante.usuario %>
-</p>
+<strong>
+  Pratos
+</strong>
 
-<p>
-  <strong>Senha:</strong>
-  <%= @restaurante.senha %>
-</p>
-
+<ul>
+  <% @restaurante.pratos.each do |prato| %>
+    <li> <%= prato.nome %> </li>
+  <% end %>
+</ul>
 <%= link_to 'Edit', edit_restaurante_path(@restaurante) %> |
 <%= link_to 'Back', restaurantes_path %>
