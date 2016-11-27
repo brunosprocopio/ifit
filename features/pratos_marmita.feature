@@ -27,9 +27,8 @@ Feature: Mountable Plate
     And I click on the plate "5" link
     Then I should be redirected to plate "5" page
     And I should see plate "5" description
-    And I should see the textbox of each component of the plate "3" with the price next to it
-    And I fill the textboxes "batata-doce" and "frango" with "100" and "200" gramas
-    And I click on "Calculate Price"
+    And I fill the textboxes "alimentos1" and "alimentos2" with "100" and "200" gramas
+    And I click on "Calcular Preço"
     And I should see the price "55"
     And I should see the restaurant link "2" that owns the plate
     And I should see the 'Comprar' button

@@ -12,17 +12,17 @@ end
 Given(/^the AlimentosPrecos table$/) do |table|
 end
 
-Then(/^I should see the textbox of each component of the plate "([^"]*)" with the price next to it$/) do |arg1|
-
-end
-
 Then(/^I fill the textboxes "([^"]*)" and "([^"]*)" with "([^"]*)" and "([^"]*)" gramas$/) do |arg1, arg2, arg3, arg4|
-
+  expect(page).to have_field(arg1)
+  expect(page).to have_field(arg2)
+  fill_in "#{arg1}", with: "#{arg3}"
+  fill_in "#{arg2}", with: "#{arg4}"
 end
 
 Then(/^I click on "([^"]*)"$/) do |arg1|
-
+  click_button "#{arg1}"
 end
 
 Then(/^I should see the price "([^"]*)"$/) do |arg1|
+  expect(page).to have_content(arg1)
 end
