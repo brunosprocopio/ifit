@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20161016051116) do
 
   create_table "alimento_precos", force: :cascade do |t|
     t.string   "nome"
-    t.integer  "preco"
+    t.float    "preco"
     t.integer  "prato_montado_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

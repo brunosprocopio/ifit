@@ -1,3 +1,12 @@
+Before do
+  PratoPronto.create :id => 1, :preco => 50, :prato_id => 2
+  PratoPronto.create :id => 2, :preco => 40, :prato_id => 4
+  PratoPronto.create :id => 3, :preco => 60, :prato_id => 6
+  PratoPronto.create :id => 4, :preco => 20, :prato_id => 8
+  PratoPronto.create :id => 5, :preco => 10, :prato_id => 10
+  PratoPronto.create :id => 6, :preco => 100, :prato_id => 12
+end
+
 Given(/^I visit the plates page and have the plates table$/) do |table|
   visit '/pratos'
 end

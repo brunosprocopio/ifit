@@ -1,9 +1,30 @@
-<p id="notice"><%= notice %></p>
+p id="notice"><%= notice %></p>
 
 <p>
-  <strong>References:</strong>
-  <%= @prato_montado.references %>
+  <strong>Prato Pronto</strong>
+  <%= "Nome: #{@prato.nome}" %>
 </p>
 
-<%= link_to 'Edit', edit_prato_montado_path(@prato_montado) %> |
-<%= link_to 'Back', prato_montados_path %>
+<p>
+  <%= "Descrição: #{@prato.descricao}" %>
+</p>
+
+<p>
+  <%= form_tag controller: "prato_montados", action: "calcular", id: @pm.id, method: "get"%>
+      <%= text_field_tag :alimentos1 %>
+      <%= label_tag(:alimentos1, "#{@alimento1.nome}: #{@alimento1.preco} reais a grama" )%>
+      <%= text_field_tag :alimentos2 %>
+      <%= label_tag(:alimentos2, "#{@alimento2.nome}: #{@alimento2.preco} reais a grama" )%>
+      <%= submit_tag("Calcular Preço") %>
+</p>
+
+<% unless @result.nil? %>
+    <p> = <%= "Preço Calculado: #{@result}" %> </p>
+<% end %>
+
+<p>
+  <%= link_to "Restaurante: #{@restaurante.nome}", @restaurante %>
+</p>
+<p>
+  <%= link_to 'Comprar', "/pedidos/compra/#{@prato.id}" %>
+</p>

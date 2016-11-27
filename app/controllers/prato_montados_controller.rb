@@ -10,6 +10,21 @@ class PratoMontadosController < ApplicationController
   # GET /prato_montados/1
   # GET /prato_montados/1.json
   def show
+    @pm = PratoMontado.find(params[:id])
+    @prato = Prato.find(@pm.prato_id)
+    @restaurante = Restaurante.find(@prato.restaurante_id)
+    @alimento1 = AlimentoPreco.all.where("prato_montado_id = ?", @pm.id).first
+    @alimento2 = AlimentoPreco.all.where("prato_montado_id = ?", @pm.id).second
+  end
+
+  def calcular
+    @pm = PratoMontado.find(params[:id])
+    @prato = Prato.find(@pm.prato_id)
+    @restaurante = Restaurante.find(@prato.restaurante_id)
+    @alimento1 = AlimentoPreco.all.where("prato_montado_id = ?", @pm.id).first
+    @alimento2 = AlimentoPreco.all.where("prato_montado_id = ?", @pm.id).second
+    @result = (params[:alimentos1].to_s.to_d*@alimento1.preco.to_s.to_d)+(params[:alimentos2].to_s.to_d*@alimento2.preco.to_s.to_d)
+    render :show, id: params[:id]
   end
 
   # GET /prato_montados/new

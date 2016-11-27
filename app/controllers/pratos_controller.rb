@@ -12,9 +12,11 @@ class PratosController < ApplicationController
   def show
     @pratos = Prato.all
     if @pratos.find(params[:id]).tipo == 0
-      redirect_to "/prato_prontos/#{params[:id]}"
+      @prato_pronto = PratoPronto.find_by_prato_id(params[:id])
+      redirect_to "/prato_prontos/#{@prato_pronto.id}"
     else
-      redirect_to "/prato_montados/#{params[:id]}"
+      @prato_montado = PratoMontado.find_by_prato_id(params[:id])
+      redirect_to "/prato_montados/#{@prato_montado.id}"
     end
   end
 

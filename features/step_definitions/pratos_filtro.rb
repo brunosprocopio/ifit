@@ -18,12 +18,6 @@ Before do
   Prato.create :id => 10, :nome => "p10", :descricao => "d10", :alema => 0, :arabe => 0, :asiatica => 0, :brasileira => 0, :chinesa => 0, :francesa => 0, :indiana => 0, :italiana => 0, :japonesa => 0, :mediterraneo => 1, :mexicana => 0, :portuguesa => 0, :tailandesa => 0, :tipo => 0, :restaurante_id => 1
   Prato.create :id => 11, :nome => "p11", :descricao => "d11", :alema => 0, :arabe => 0, :asiatica => 0, :brasileira => 0, :chinesa => 0, :francesa => 0, :indiana => 0, :italiana => 0, :japonesa => 0, :mediterraneo => 0, :mexicana => 1, :portuguesa => 0, :tailandesa => 0, :tipo => 1, :restaurante_id => 2
   Prato.create :id => 12, :nome => "p12", :descricao => "d12", :alema => 0, :arabe => 0, :asiatica => 0, :brasileira => 0, :chinesa => 0, :francesa => 0, :indiana => 0, :italiana => 0, :japonesa => 0, :mediterraneo => 0, :mexicana => 0, :portuguesa => 1, :tailandesa => 0, :tipo => 0, :restaurante_id => 3
-  PratoPronto.create :id => 1, :preco => 50, :prato_id => 2
-  PratoPronto.create :id => 2, :preco => 40, :prato_id => 4
-  PratoPronto.create :id => 3, :preco => 60, :prato_id => 6
-  PratoPronto.create :id => 4, :preco => 20, :prato_id => 8
-  PratoPronto.create :id => 5, :preco => 10, :prato_id => 10
-  PratoPronto.create :id => 6, :preco => 100, :prato_id => 12
 end
 
 Given(/^the plates table$/) do |table|

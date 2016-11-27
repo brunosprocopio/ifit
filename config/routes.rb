@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :prato_montados do
     collection do
       get "prato_montados/:id", to: "prato_montados#show"
+      get "prato_montados/:id/calcular" , to: "prato_montados#calcular"
+      post "prato_montados/:id/calcular" , to: "prato_montados#calcular"
     end
   end
   resources :prato_prontos do
