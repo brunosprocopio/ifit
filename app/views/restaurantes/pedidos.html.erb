@@ -1,0 +1,6 @@
+<ul>
+  <% @restaurante.endereco_restaurante.pedido.each do |pedido| %>
+    <%= link_to pedido.id, pedido %>
+    <br>
+  <% end %>
+</ul>

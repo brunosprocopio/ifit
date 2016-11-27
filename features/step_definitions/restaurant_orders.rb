@@ -10,6 +10,6 @@ end
 When(/^in restaurant orders page I should see the orders$/) do
   visit "restaurantes/8002/pedidos"
   Restaurante.find(8002).endereco_restaurante.pedido.each do |pedido|
-    expect(page).to have_link(pedido.id, "pedido/#{pedido.id}")
+    expect(page).to have_link(pedido.id, href: "/pedidos/#{pedido.id}")
   end
 end

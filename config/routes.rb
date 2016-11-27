@@ -39,6 +39,9 @@ end
   end
   resources :endereco_restaurantes
   resources :restaurantes do
+    member do
+      get "pedidos"
+    end
     collection do
       get "lista_rest"
       post "lista_rest"
