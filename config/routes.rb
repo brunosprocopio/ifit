@@ -48,6 +48,7 @@ end
   end
   resources :endereco_sessaos
   resources :sessaos
+  resource :user_sessions, only: [:create, :new, :destroy]
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

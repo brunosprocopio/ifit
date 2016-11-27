@@ -24,8 +24,6 @@ class RestaurantesProximosController < ApplicationController
       end
 
       @restaurantes_proximos = RestaurantesProximo.where("restaurante_id IN (?)", restaurants)
-
-      logger.debug "PRATOS ENCONTRADOS: " << @found_foods.to_s
     end
   end
 
