@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 20161016051116) do
 
   add_index "alimento_quantidades", ["prato_pronto_id"], name: "index_alimento_quantidades_on_prato_pronto_id", using: :btree
 
+  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "avaliacaos", force: :cascade do |t|
     t.integer  "nota_alimento"
     t.string   "comentario"
