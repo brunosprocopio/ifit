@@ -1,15 +1,15 @@
 class WelcomeController < ApplicationController
 
   def self.create_nearby_restaurants_by_lat_lng(location, sessao_id)
+    begin
+      @connection = ActiveRecord::Base.establish_connection(
+          :adapter => "postgresql",
+          :host => "localhost",
+          :username => "postgres",
+          :password => "",
+          :database => "development-ifit")
 
-    @connection = ActiveRecord::Base.establish_connection(
-        :adapter => "postgresql",
-        :host => "localhost",
-        :username => "postgres",
-        :password => "",
-        :database => "development-ifit")
-
-    sql = 'SELECT * FROM (
+      sql = 'SELECT * FROM (
                 SELECT *,
                   ((3956 *
                   2 *
@@ -24,7 +24,39 @@ class WelcomeController < ApplicationController
                     ) * 1.609344) as distancia
                     FROM Restaurantes dest) as tabela WHERE distancia < 4.0;'
 
-    @result = ActiveRecord::Base.connection.execute(sql);
+      @result = ActiveRecord::Base.connection.execute(sql);
+    rescue
+
+
+      @connection = ActiveRecord::Base.establish_connection(
+          :adapter => "postgresql",
+          :host => "localhost",
+          :username => "postgres",
+          :password => "",
+          :database => "test-ifit")
+
+      sql = 'SELECT * FROM (
+                SELECT *,
+                  ((3956 *
+                  2 *
+                  ASIN(
+                    SQRT(POW(SIN((abs('+location[0].to_s+') - abs(dest.latitude)) *
+                           pi()/180 / 2),2) +
+                    COS(abs('+location[0].to_s+') * pi()/180 ) *
+                    COS(abs(dest.latitude) * pi()/180) *
+                    POW(SIN((abs('+location[1].to_s+') - abs(dest.longitude)) *
+                          pi()/180 / 2), 2))
+                    )
+                    ) * 1.609344) as distancia
+                    FROM Restaurantes dest) as tabela WHERE distancia < 4.0;'
+
+      @result = ActiveRecord::Base.connection.execute(sql);
+
+
+    ensure
+
+    end
+
 
     if @result.count > 0
       @result.each do |row|

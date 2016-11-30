@@ -27,23 +27,3 @@ When (/^Click on the Submit Button$/) do
   page.find('input[id="cep"]')[:value].should_not eq " "
   find('input[name="commit"]').click
 end
-
-Then (/^I should be redirected to restaurantes_proximo_path/) do
-  #expect(current_path).to eq create_nearby_restaurants_by_cep_restaurantes_proximos_path
-end
-
-Given (/^I am on homepage$/) do
-
-end
-When (/^I put the CEP 02423030 in input text$/) do
-
-end
-
-
-Then (/^I should be redirect to restaurantes_proximo_path$/)do
-
-end
-
-And (/^I should see$/) do
-
-end

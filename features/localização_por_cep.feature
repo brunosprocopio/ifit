@@ -12,4 +12,3 @@ Feature: Enter my CEP
     Given I enter my CEP in the search label
     When Click on the Submit Button
     Then I should be redirected to restaurantes_proximo_path
-
