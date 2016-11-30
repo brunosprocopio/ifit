@@ -1,11 +1,14 @@
+require 'database_cleaner'
+
 Before do
-  Sessao.create :id => 1
+
+  Sessao.create :id => 1000
   Restaurante.create :id => 1, :nome => "rest1", :usuario => "teste1", :senha => "teste1", :cartao_debito => false, :cartao_credito => false, :dinheiro => true
   Restaurante.create :id => 2, :nome => "rest2", :usuario => "teste2", :senha => "teste2", :cartao_debito => false, :cartao_credito => true, :dinheiro => true
   Restaurante.create :id => 3, :nome => "rest3", :usuario => "teste3", :senha => "teste3", :cartao_debito => true, :cartao_credito => true, :dinheiro => false
-  RestaurantesProximo.create :id => 1, :sessao_id => 1, :restaurante_id => 1
-  RestaurantesProximo.create :id => 2, :sessao_id => 1, :restaurante_id => 2
-  RestaurantesProximo.create :id => 3, :sessao_id => 1, :restaurante_id => 3
+  RestaurantesProximo.create :id => 1, :sessao_id => 1000, :restaurante_id => 1
+  RestaurantesProximo.create :id => 2, :sessao_id => 1000, :restaurante_id => 2
+  RestaurantesProximo.create :id => 3, :sessao_id => 1000, :restaurante_id => 3
   Prato.create :id => 1, :nome => "p1", :descricao => "d1" ,:alema => 1, :arabe => 0, :asiatica => 0, :brasileira => 0, :chinesa => 0, :francesa => 0, :indiana => 0, :italiana => 0, :japonesa => 0, :mediterraneo => 0, :mexicana => 0, :portuguesa => 0, :tailandesa => 0, :tipo => 1, :restaurante_id => 1
   Prato.create :id => 2, :nome => "p2", :descricao => "d2", :alema => 0, :arabe => 1, :asiatica => 0, :brasileira => 0, :chinesa => 0, :francesa => 0, :indiana => 0, :italiana => 0, :japonesa => 0, :mediterraneo => 0, :mexicana => 0, :portuguesa => 0, :tailandesa => 0, :tipo => 0, :restaurante_id => 2
   Prato.create :id => 3, :nome => "p3", :descricao => "d3", :alema => 0, :arabe => 0, :asiatica => 1, :brasileira => 0, :chinesa => 0, :francesa => 0, :indiana => 0, :italiana => 0, :japonesa => 0, :mediterraneo => 0, :mexicana => 0, :portuguesa => 0, :tailandesa => 0, :tipo => 1, :restaurante_id => 3

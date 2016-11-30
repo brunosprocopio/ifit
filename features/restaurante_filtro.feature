@@ -9,4 +9,4 @@ Feature: Restaurant filter
     And I do not check the "cartao_debito" checkbox
     And I do not check the "cartao_credito" checkbox
     And I click on the 'Filter' button
-    Then I should see restaurants "1,2"
+    Then I should see restaurants "2"

@@ -28,7 +28,7 @@ class RestaurantesProximosController < ApplicationController
       puts 'session'
       puts session[:sessao_id]
 
-      @restaurantes_proximos = RestaurantesProximo.where("restaurante_id IN (?)", restaurants).where(sessao_id: session[:sessao_id])
+      @restaurantes_proximos = RestaurantesProximo.where("restaurante_id IN (?)", restaurants)#.where(sessao_id: session[:sessao_id])
 
       logger.debug "PRATOS ENCONTRADOS: " << @found_foods.to_s
     end
@@ -40,7 +40,7 @@ class RestaurantesProximosController < ApplicationController
 #    @restaurantes_proximos.each do |restaurantes_proximos|
 #      puts restaurantes_proximos.id
 #    end
-    @restaurantes_proximos = @restaurantes_proximos.joins(:restaurante).where("@restaurantes_proximos.restaurante_id = restaurantes.id AND dinheiro = ? OR cartao_credito = ? OR cartao_debito = ?", params[:dinheiro], params[:cartao_credito], params[:cartao_debito]).where(sessao_id: session[:sessao_id])
+    @restaurantes_proximos = @restaurantes_proximos.joins(:restaurante).where("@restaurantes_proximos.restaurante_id = restaurantes.id AND dinheiro = ? OR cartao_credito = ? OR cartao_debito = ?", params[:dinheiro], params[:cartao_credito], params[:cartao_debito])#.where(sessao_id: session[:sessao_id])
     render :action => :index
   end
 
@@ -60,7 +60,6 @@ class RestaurantesProximosController < ApplicationController
   end
 
   def create_nearby_restaurants_by_cep
-
     @sessao = Sessao.create
     session[:sessao_id] = @sessao.id
     session[:cep] = params[:cep]
