@@ -47,7 +47,7 @@
   <tbody>
     <% @pratos.each do |pr| %>
         <tr>
-          <li><%=link_to "pratos/show/#{pr.id}" %></li>
+          <li><%=link_to "pratos/show/#{pr.id}" %>  <a href="/carrinho/?prato=<%=pr.id%>">Adicionar ao carrinho de Compras</a>  </li>
         </tr>
     <% end %>
   </tbody>

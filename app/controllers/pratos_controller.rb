@@ -7,6 +7,24 @@ class PratosController < ApplicationController
     @pratos = Prato.all
   end
 
+  def carrinhocompras
+
+    id = params[:prato]
+    flash[:notice] = "Prato "+id+" adicionado ao carrinho de compras com sucesso."
+
+    if(session[:carrinho] && session[:carrinho].length > 0)
+
+      session[:carrinho][session[:carrinho].length] = id
+    else
+
+      session[:carrinho] = Array.new
+      session[:carrinho][0] = id
+    end
+
+    @pratos = Prato.all
+    render :action => :index
+  end
+
   # GET /pratos/1
   # GET /pratos/1.json
   def show
@@ -97,4 +115,6 @@ class PratosController < ApplicationController
     def prato_params
       params.require(:prato).permit(:nome, :descricao, :cozinha, :tipo)
     end
+
+
 end

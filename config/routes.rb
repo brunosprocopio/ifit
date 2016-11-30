@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     collection do
       get "lista_pratos"
       post "lista_pratos"
-      get "show"
-      post "show"
+      #get "show"
+      #post "show"
     end
   end
   resources :dados_cartaos
@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :endereco_sessaos
   resources :sessaos
   root 'welcome#index'
+  get 'carrinho' => 'pratos#carrinhocompras'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
